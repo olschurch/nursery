@@ -1,0 +1,8 @@
+.enrollment {
+  @apply my-12;
+  @apply max-w-2xl mx-auto;
+}
+
+.enrollment h2 {
+  @apply text-xl;
+}
