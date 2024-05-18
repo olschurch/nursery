@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Inter } from "next/font/google";
 import { Nav } from "@/components/Nav";
 import clsx from "clsx";
+import { Footer } from "@/components/Footer";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,9 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx("bg-background")}>
+      <body className={clsx("bg-background", inter.className)}>
         <Nav className="" />
         {children}
+        <Footer />
       </body>
     </html>
   );
