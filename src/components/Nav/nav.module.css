@@ -1,0 +1,18 @@
+.nav {
+  @apply sticky top-0;
+  @apply w-full h-auto overflow-hidden;
+  @apply flex flex-col lg:flex-row items-center justify-between;
+  @apply px-8;
+  @apply z-10;
+  @apply py-4;
+  @apply bg-background;
+}
+
+.group {
+}
+
+.menu {
+  li a {
+    @apply font-bold text-base;
+  }
+}

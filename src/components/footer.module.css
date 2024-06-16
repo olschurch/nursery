@@ -1,2 +1,7 @@
 .footer {
+  @apply mx-auto text-center;
+  @apply max-w-sm;
+  a {
+    @apply border-b border-b-current;
+  }
 }

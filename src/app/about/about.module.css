@@ -1,0 +1,15 @@
+.article {
+  section {
+    @apply max-w-xl mx-auto;
+  }
+  h2 {
+    @apply text-primary font-bold text-3xl;
+    @apply mt-12;
+  }
+  h3 {
+    @apply font-bold;
+  }
+  p {
+    @apply my-4 text-lg;
+  }
+}
