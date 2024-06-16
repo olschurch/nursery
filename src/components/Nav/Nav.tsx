@@ -67,7 +67,8 @@ export function Nav({ className }: { className: string }) {
                     navigationMenuTriggerStyle(),
                     "bg-primary",
                     "ml-8",
-                    "!text-background py-2 rounded"
+                    "!text-background py-2 rounded",
+                    "active:bg-foreground"
                   )}
                 >
                   Enrollment
