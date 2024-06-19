@@ -5,6 +5,8 @@
   h2 {
     @apply text-primary font-bold text-3xl;
     @apply mt-12;
+
+    scroll-margin-top: calc(var(--nav-height) + 20px);
   }
   h3 {
     @apply font-bold;

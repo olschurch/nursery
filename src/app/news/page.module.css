@@ -1,0 +1,11 @@
+.main {
+  @apply px-4;
+  div {
+    @apply w-full mx-auto max-w-3xl bg-white;
+    @apply rounded-lg shadow-xl;
+    @apply mt-8 mb-16;
+    iframe {
+      @apply w-full mx-auto block min-h-[100vh];
+    }
+  }
+}

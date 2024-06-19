@@ -15,16 +15,19 @@ import {
 } from "../ui/navigation-menu";
 import clsx from "clsx";
 import { HorseIcon } from "../icons/horse";
+import { Logo } from "../icons/logo";
 
 export function Nav({ className }: { className: string }) {
   return (
     <nav className={styles.nav}>
       <div className={styles.group}>
         <Link href="/" className="transition-all block">
-          <div className="flex items-center justify-start flex-row">
-            <figure className="w-20 h-20 bg-white rounded-full p-2 text-primary mr-4">
-              <HorseIcon />
-            </figure>
+          <div className={styles["logo-group"]}>
+            <div className={styles.figure}>
+              <h1>The Nursery</h1>
+              <Logo />
+              <h2>At Our Lady Of Sorrows</h2>
+            </div>
           </div>
         </Link>
       </div>

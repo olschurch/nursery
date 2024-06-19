@@ -10,6 +10,7 @@
 @layer base {
   :root {
     --padding: 2rem;
+    --nav-height: 110px;
     --background: 213.75 80% 96.08%;
     --foreground: 214.74 50.67% 29.41%;
     --card: 0 0% 100%;
@@ -59,6 +60,10 @@
   * {
     @apply border-border;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
   html,
   body {
     @apply p-0 m-0;
@@ -66,5 +71,9 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  main {
+    min-height: 70vh;
   }
 }

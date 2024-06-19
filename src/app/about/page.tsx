@@ -1,11 +1,19 @@
+import Link from "next/link";
 import styles from "./about.module.css";
+import { Hero } from "@/components/Hero/Hero";
 
 export default function About() {
   return (
     <main>
+      <Hero src="https://olschurch.com/wp-content/uploads//whatshappening-1.jpeg" />
       <article className={styles.article}>
+        <div className={styles.links}>
+          <Link href="#infants">Infants</Link>
+          <Link href="#waddlers">Waddlers</Link>
+          <Link href="#toddlers">Toddlers</Link>
+        </div>
         <section>
-          <h2>Infants</h2>
+          <h2 id="infants">Infants</h2>
           <h3>Six until 12 Weeks TK</h3>
           <p>
             At The Nursery, we foster a strong partnership with parents,
@@ -22,7 +30,7 @@ export default function About() {
           </p>
         </section>
         <section>
-          <h2>Waddlers</h2>
+          <h2 id="waddlers">Waddlers</h2>
           <h3>12 - 24 Months</h3>
           <p>
             In our Waddler classroom, we support the transition from infant to
@@ -41,7 +49,7 @@ export default function About() {
           </p>
         </section>
         <section>
-          <h2>Toddlers</h2>
+          <h2 id="toddlers">Toddlers</h2>
           <h3>TK Until TK</h3>
           <p>
             At The Nursery, we support toddlers as they develop self-help skills

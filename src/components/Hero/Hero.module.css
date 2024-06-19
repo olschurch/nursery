@@ -1,7 +1,7 @@
 .image-wrapper {
-  height: 500px;
   width: 100%;
   overflow: hidden;
+  @apply landscape:h-[70vh];
   figure {
     display: block;
     width: 100%;
