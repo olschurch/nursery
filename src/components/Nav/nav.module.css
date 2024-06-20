@@ -20,21 +20,22 @@
 }
 
 .logo-group {
-  @apply text-center;
-  @apply flex items-center justify-center flex-row;
+  @apply flex items-center justify-start flex-row;
   @apply text-primary;
-  @apply w-32;
-
+  @apply w-60;
   mix-blend-mode: darken;
   svg {
     @apply block mx-auto;
-    @apply w-10 h-10;
+    width: 60px;
+    height: 60px;
+    @apply mr-2 ml-0;
   }
   h1 {
-    @apply font-bold text-lg -mb-2;
+    @apply font-bold text-xl mb-0;
+    line-height: 1;
   }
   h2 {
-    font-size: 12px;
+    @apply text-sm;
     @apply italic;
   }
 }

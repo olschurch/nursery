@@ -23,9 +23,9 @@ export function Nav({ className }: { className: string }) {
       <div className={styles.group}>
         <Link href="/" className="transition-all block">
           <div className={styles["logo-group"]}>
-            <div className={styles.figure}>
+            <Logo />
+            <div>
               <h1>The Nursery</h1>
-              <Logo />
               <h2>At Our Lady Of Sorrows</h2>
             </div>
           </div>
@@ -34,6 +34,16 @@ export function Nav({ className }: { className: string }) {
       <div className={styles.group}>
         <NavigationMenu className={styles.menu}>
           <NavigationMenuList>
+            <NavigationMenuItem>
+              <Link href="/programs" legacyBehavior passHref>
+                <NavigationMenuLink
+                  className={clsx(navigationMenuTriggerStyle())}
+                >
+                  Programs
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+
             <NavigationMenuItem>
               <Link href="/about" legacyBehavior passHref>
                 <NavigationMenuLink
