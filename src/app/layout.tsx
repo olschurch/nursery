@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Inter, PT_Serif } from "next/font/google";
+import { Raleway } from "next/font/google";
 import { Nav } from "@/components/Nav/Nav";
 import clsx from "clsx";
 import { Footer } from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
-const pt = PT_Serif({ subsets: ["latin"], weight: ["400", "700"] });
+const googleFont = Raleway({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
   title: "The Preschool",
@@ -20,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx("bg-background", pt.className)}>
+      <body className={clsx("bg-background", googleFont.className)}>
         <Nav className="" />
         {children}
         <Footer />

@@ -2,9 +2,6 @@
 import styles from "./nav.module.css";
 
 import Link from "next/link";
-import { Butterfly_Kids } from "next/font/google";
-
-const kids = Butterfly_Kids({ weight: ["400"], subsets: ["latin"] });
 
 import {
   NavigationMenu,
@@ -14,22 +11,13 @@ import {
   navigationMenuTriggerStyle,
 } from "../ui/navigation-menu";
 import clsx from "clsx";
-import { HorseIcon } from "../icons/horse";
-import { Logo } from "../icons/logo";
+import { LogoGroup } from "../LogoGroup/LogoGroup";
 
 export function Nav({ className }: { className: string }) {
   return (
-    <nav className={styles.nav}>
+    <nav className={clsx(styles.nav)}>
       <div className={styles.group}>
-        <Link href="/" className="transition-all block">
-          <div className={styles["logo-group"]}>
-            <Logo />
-            <div>
-              <h1>The Nursery</h1>
-              <h2>At Our Lady Of Sorrows</h2>
-            </div>
-          </div>
-        </Link>
+        <LogoGroup />
       </div>
       <div className={styles.group}>
         <NavigationMenu className={styles.menu}>
@@ -76,13 +64,7 @@ export function Nav({ className }: { className: string }) {
             <NavigationMenuItem>
               <Link href="/enrollment" legacyBehavior passHref>
                 <NavigationMenuLink
-                  className={clsx(
-                    navigationMenuTriggerStyle(),
-                    "bg-primary",
-                    "ml-8",
-                    "!text-background py-2 rounded",
-                    "active:bg-foreground"
-                  )}
+                  className={clsx(navigationMenuTriggerStyle(), styles.action)}
                 >
                   Enrollment
                 </NavigationMenuLink>

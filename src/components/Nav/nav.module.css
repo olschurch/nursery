@@ -7,41 +7,18 @@
   @apply py-4;
   @apply bg-background shadow;
   height: var(--nav-height, 100px);
-
-  h1 {
-    @apply leading-4;
-    span {
-      @apply font-bold text-2xl;
-    }
-  }
 }
 
 .group {
 }
 
-.logo-group {
-  @apply flex items-center justify-start flex-row;
-  @apply text-primary;
-  @apply w-60;
-  mix-blend-mode: darken;
-  svg {
-    @apply block mx-auto;
-    width: 60px;
-    height: 60px;
-    @apply mr-2 ml-0;
-  }
-  h1 {
-    @apply font-bold text-xl mb-0;
-    line-height: 1;
-  }
-  h2 {
-    @apply text-sm;
-    @apply italic;
+.menu {
+  li a {
+    @apply text-base text-foreground;
   }
 }
 
-.menu {
-  li a {
-    @apply font-bold text-base;
-  }
+.action {
+  @apply font-bold;
+  @apply bg-primary ml-8 !text-background py-2 rounded active:bg-foreground;
 }

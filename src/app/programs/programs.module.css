@@ -15,3 +15,10 @@
     @apply my-4 text-lg;
   }
 }
+
+.links {
+  @apply max-w-xl mx-auto mt-8 flex space-x-2;
+  a {
+    @apply font-sans border-b;
+  }
+}
