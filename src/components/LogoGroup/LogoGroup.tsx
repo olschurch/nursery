@@ -17,7 +17,7 @@ export function LogoGroup({ variant }: { variant?: "sm" }) {
     >
       <div className={styles["logo-group"]}>
         <Logo />
-        <div>
+        <div className={styles["logo-group-text"]}>
           <h1 className={clsx(styles.h1, font.className)}>The Nursery</h1>
           <h2>Our Lady Of Sorrows</h2>
         </div>

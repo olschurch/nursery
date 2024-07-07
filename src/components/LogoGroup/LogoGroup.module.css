@@ -4,16 +4,20 @@
 
   &.sm {
     @apply max-w-[140px];
-    svg {
-      @apply w-8 h-8;
-      @apply -translate-y-0;
-    }
-    .h1 {
-      @apply leading-3 text-base font-bold;
-    }
-    h2 {
-      @apply text-[10px] text-center leading-3 -translate-x-1;
-      @apply italic text-foreground;
+    .logo-group {
+      @apply block;
+      svg {
+        @apply w-8 h-8;
+        @apply -translate-y-0;
+        @apply mb-2;
+      }
+      .h1 {
+        @apply leading-4 text-xl font-bold;
+      }
+      h2 {
+        @apply text-[10px] text-center leading-3 -translate-x-0;
+        @apply italic text-foreground;
+      }
     }
   }
 }
