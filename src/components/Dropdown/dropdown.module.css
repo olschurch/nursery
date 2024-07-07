@@ -1,6 +1,6 @@
 .wrapper {
   --transition: 150ms all 20ms ease-out;
-  @apply relative w-[100px];
+  @apply relative max-w-[100px] w-auto;
   &:after {
     content: "";
     @apply absolute;
@@ -14,7 +14,6 @@
   &:hover,
   &:focus-within {
     .trigger {
-      border-top-color: purple;
     }
 
     .menu {
@@ -30,9 +29,7 @@
 }
 
 .trigger {
-  display: inline-flex;
-  align-items: center;
-
+  /* decoration */
   &::after {
     content: "";
     display: block;
@@ -53,7 +50,6 @@
   transition: var(--transition);
   transform: rotateX(-90deg) translateX(-50%);
   visibility: hidden;
-  /* opacity: 0.3; */
   @apply shadow rounded;
   a {
     display: block;

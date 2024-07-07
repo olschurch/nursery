@@ -7,17 +7,19 @@ import { Sacramento } from "next/font/google";
 
 const font = Sacramento({ weight: ["400"], subsets: ["latin"] });
 
-export function LogoGroup() {
+export function LogoGroup({ variant }: { variant?: "sm" }) {
   return (
     <Link
       href="/"
-      className={clsx(styles["logo-group-container"], "logo-group")}
+      className={clsx(styles["logo-group-container"], "logo-group", {
+        [styles.sm]: variant === "sm",
+      })}
     >
       <div className={styles["logo-group"]}>
         <Logo />
         <div>
           <h1 className={clsx(styles.h1, font.className)}>The Nursery</h1>
-          <h2>At Our Lady Of Sorrows</h2>
+          <h2>Our Lady Of Sorrows</h2>
         </div>
       </div>
     </Link>

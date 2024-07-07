@@ -6,7 +6,7 @@ import { LogoGroup } from "./LogoGroup/LogoGroup";
 export function Footer() {
   return (
     <footer className={styles.footer}>
-      <LogoGroup />
+      <LogoGroup variant="sm" />
       <address>
         <Link href={ADDRESS_LINK} target="_blank">
           162 Academy Street, South Orange, NJ 07079

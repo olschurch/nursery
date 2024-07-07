@@ -1,6 +1,7 @@
 import { ReactNode, useId } from "react";
 import styles from "./dropdown.module.css";
 import Link from "next/link";
+import { Button } from "../ui/button";
 
 export function DropdownMenuLinkItem({
   href,
@@ -27,14 +28,15 @@ export function Dropdown({
 
   return (
     <div className={styles.wrapper}>
-      <button
+      <Button
         type="button"
+        variant="ghost"
         className={styles.trigger}
         aria-expanded="false"
         aria-controls={id}
       >
         {title}
-      </button>
+      </Button>
       <ul className={styles.menu} id={id}>
         {children}
       </ul>

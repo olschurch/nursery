@@ -9,12 +9,24 @@
   height: var(--nav-height, 100px);
 }
 
+.desktop {
+  @apply hidden;
+  @media (min-width: 620px) {
+    @apply block;
+  }
+}
+
 .group {
 }
 
 .menu {
-  li a {
-    @apply text-base text-foreground;
+  li a,
+  li button {
+    @apply text-xs text-foreground;
+    @apply shadow-none;
+    @media (min-width: 768px) {
+      @apply text-base;
+    }
   }
 }
 

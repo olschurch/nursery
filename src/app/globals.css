@@ -7,18 +7,22 @@
 
 /* clip-path: ellipse(82% 66% at 51% 34%);*/
 
+:root {
+  --hue: 250;
+}
+
 @layer base {
   :root {
     --padding: 2rem;
     --nav-height: 110px;
-    --background: 200.75 80% 99.08%;
-    --foreground: 214.74 50.67% 29.41%;
+    --background: var(--hue) 80% 99.08%;
+    --foreground: var(--hue) 50.67% 29.41%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 73.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
+    --primary: var(--hue) 73.2% 53.3%;
+    --primary-foreground: var(--hue) 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;

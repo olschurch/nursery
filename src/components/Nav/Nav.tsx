@@ -20,7 +20,7 @@ export function Nav({ className }: { className: string }) {
       <div className={styles.group}>
         <LogoGroup />
       </div>
-      <div className={styles.group}>
+      <div className={clsx(styles.group, styles.desktop)}>
         <NavigationMenu className={styles.menu}>
           <NavigationMenuList>
             <NavigationMenuItem>
@@ -34,8 +34,10 @@ export function Nav({ className }: { className: string }) {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Dropdown title="About Us">
+              <Dropdown title="Learn">
+                <DropdownMenuLinkItem href="/about" text="About Us" />
                 <DropdownMenuLinkItem href="/tuition" text="Tuition" />
+                <DropdownMenuLinkItem href="/faq" text="FAQ" />
               </Dropdown>
             </NavigationMenuItem>
 
