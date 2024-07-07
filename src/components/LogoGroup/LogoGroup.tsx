@@ -7,12 +7,12 @@ import { Sacramento } from "next/font/google";
 
 const font = Sacramento({ weight: ["400"], subsets: ["latin"] });
 
-export function LogoGroup({ variant }: { variant?: "sm" }) {
+export function LogoGroup({ variant }: { variant?: "in-footer" }) {
   return (
     <Link
       href="/"
       className={clsx(styles["logo-group-container"], "logo-group", {
-        [styles.sm]: variant === "sm",
+        [styles["in-footer"]]: variant === "in-footer",
       })}
     >
       <div className={styles["logo-group"]}>

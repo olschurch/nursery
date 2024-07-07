@@ -2,7 +2,7 @@
   @apply transition-all block;
   @apply max-w-[250px] mx-auto;
 
-  &.sm {
+  &.in-footer {
     @apply max-w-[140px];
     .logo-group {
       @apply block;
