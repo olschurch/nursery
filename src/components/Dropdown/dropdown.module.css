@@ -1,0 +1,73 @@
+.wrapper {
+  --transition: 150ms all 20ms ease-out;
+  @apply relative w-[100px];
+  &:after {
+    content: "";
+    @apply absolute;
+    @apply top-0 left-1/2;
+    @apply -translate-x-1/2;
+    /* @apply opacity-0; */
+    transition: var(--transition);
+    /* will-change: opacity; */
+  }
+
+  &:hover,
+  &:focus-within {
+    .trigger {
+      border-top-color: purple;
+    }
+
+    .menu {
+      /* opacity: 1; */
+      transform: rotateX(0) translateX(-50%);
+      visibility: visible;
+    }
+
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+
+  &::after {
+    content: "";
+    display: block;
+    border: 0.35rem solid transparent;
+    background: red;
+    border-top-color: rgba(#666, 0.45);
+    margin-left: 0.25em;
+    transform: translateY(0.15em);
+  }
+}
+
+.menu {
+  @apply absolute left-1/2 top-8;
+  @apply py-4;
+  @apply bg-background;
+  @apply origin-top;
+  min-width: 15ch;
+  transition: var(--transition);
+  transform: rotateX(-90deg) translateX(-50%);
+  visibility: hidden;
+  /* opacity: 0.3; */
+  @apply shadow rounded;
+  a {
+    display: block;
+    padding: 0.5em;
+
+    transition: 0.35rem solid transparent;
+
+    &:hover {
+      background-color: rgba(10, 10, 10, 0.15);
+    }
+
+    &:focus {
+      outline: none;
+      background-color: rgba(10, 10, 10, 0.25);
+    }
+  }
+}

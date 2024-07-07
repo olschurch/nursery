@@ -12,6 +12,7 @@ import {
 } from "../ui/navigation-menu";
 import clsx from "clsx";
 import { LogoGroup } from "../LogoGroup/LogoGroup";
+import { Dropdown, DropdownMenuLinkItem } from "../Dropdown/Dropdown";
 
 export function Nav({ className }: { className: string }) {
   return (
@@ -33,13 +34,9 @@ export function Nav({ className }: { className: string }) {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/about" legacyBehavior passHref>
-                <NavigationMenuLink
-                  className={clsx(navigationMenuTriggerStyle())}
-                >
-                  About Us
-                </NavigationMenuLink>
-              </Link>
+              <Dropdown title="About Us">
+                <DropdownMenuLinkItem href="/tuition" text="Tuition" />
+              </Dropdown>
             </NavigationMenuItem>
 
             <NavigationMenuItem>

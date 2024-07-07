@@ -1,3 +1,8 @@
+.logo-group-container {
+  @apply transition-all block;
+  @apply max-w-[250px] mx-auto;
+}
+
 .logo-group {
   @apply flex items-center justify-start flex-row;
   @apply text-primary;

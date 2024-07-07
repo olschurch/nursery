@@ -9,7 +9,10 @@ const font = Sacramento({ weight: ["400"], subsets: ["latin"] });
 
 export function LogoGroup() {
   return (
-    <Link href="/" className="transition-all block">
+    <Link
+      href="/"
+      className={clsx(styles["logo-group-container"], "logo-group")}
+    >
       <div className={styles["logo-group"]}>
         <Logo />
         <div>

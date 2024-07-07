@@ -1,6 +1,6 @@
 .nav {
   @apply sticky top-0;
-  @apply w-full h-auto overflow-hidden;
+  @apply w-full h-auto;
   @apply flex flex-col lg:flex-row items-center justify-between;
   @apply px-8;
   @apply z-10;

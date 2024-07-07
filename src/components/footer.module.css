@@ -3,6 +3,15 @@
   @apply max-w-sm text-xs;
   @apply mt-32 pb-8;
   a {
+    &:global(.logo-group) {
+      @apply mb-4;
+    }
+  }
+  a:not(:global(.logo-group)) {
     @apply border-b border-b-current;
   }
+}
+
+.group {
+  @apply my-2;
 }
