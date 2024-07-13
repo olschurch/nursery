@@ -5,10 +5,12 @@ import styles from "./Hero.module.css";
 export function Hero({
   src,
   alt,
+  text,
   objectPosition,
 }: {
   src: string;
   alt: string;
+  text?: string;
   objectPosition?: string;
 }) {
   return (
@@ -26,6 +28,8 @@ export function Hero({
             }),
           }}
         />
+        {text && <div className={styles.overlay} />}
+        {text && <div className={styles.text}>{text}</div>}
       </figure>
     </div>
   );

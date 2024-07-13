@@ -7,6 +7,7 @@ export default function WhyChoose() {
         src="/room_4.jpg"
         alt="A room inside the nursery"
         objectPosition="center"
+        text="Why Choose Us?"
       />
       <main className="p-4">
         <article className={styles.article}>

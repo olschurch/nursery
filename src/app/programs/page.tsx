@@ -9,12 +9,9 @@ export default function Programs() {
         src="/room_3.jpg"
         alt="A room inside the nursery"
         objectPosition="bottom left"
+        text="Our Programs"
       />
       <article className={styles.article}>
-        <div className={styles.links}>
-          <Link href="#infants">Infants</Link>
-          <Link href="#toddlers">Toddlers</Link>
-        </div>
         <section>
           <h2 id="infants">Infants</h2>
           <h3>Six weeks until 18 months</h3>
@@ -34,7 +31,7 @@ export default function Programs() {
         </section>
 
         <section>
-          <h2 id="toddlers">Waddlers</h2>
+          <h2 id="toddlers">Toddlers</h2>
           <h3>19 months until three years </h3>
           <p>
             At The Nursery, we support toddlers as they develop self-help skills

@@ -4,21 +4,12 @@
   }
   h2 {
     @apply text-primary font-bold text-3xl;
-    @apply mt-12;
-
-    scroll-margin-top: calc(var(--nav-height) + 20px);
+    @apply mt-4;
   }
   h3 {
     @apply font-bold;
   }
   p {
     @apply my-4 text-lg;
-  }
-}
-
-.links {
-  @apply max-w-xl mx-auto mt-8 flex space-x-2;
-  a {
-    @apply font-sans border-b;
   }
 }
