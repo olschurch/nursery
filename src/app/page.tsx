@@ -5,7 +5,7 @@ import styles from "./index.module.css";
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Hero src="https://images.squarespace-cdn.com/content/v1/5d38c664faa31100010b218d/1564182950212-14OW7J85NOTO9KSVEZ0I/IMG_8900a.jpg?format=2500w" />
+      <Hero src="/room_1.jpg" alt="A room inside the nursery" />
       <section className={styles.section}>
         <p>
           The Nursery at Our Lady of Sorrows School is conveniently located at

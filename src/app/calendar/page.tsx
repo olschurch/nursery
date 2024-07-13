@@ -1,4 +1,3 @@
-import { Hero } from "@/components/Hero/Hero";
 import {
   Table,
   TableBody,
@@ -16,9 +15,12 @@ export default async function Calendar() {
   const headers = Object.keys(data[0]);
 
   return (
-    <main>
+    <main className="p-4">
       <section className="my-8">
-        <Table className="max-w-3xl mx-auto text-sm border p-2 bg-white rounded my-16">
+        <h1 className="text-primary font-bold text-3xl max-w-3xl mx-auto">
+          Nursery Calendar
+        </h1>
+        <Table className="max-w-3xl mx-auto text-sm border p-2 bg-white rounded my-4">
           <TableHeader>
             <TableRow>
               {headers.map((cell, i) => (
@@ -38,7 +40,7 @@ export default async function Calendar() {
             {data.map((row, rowIndex) => (
               <TableRow
                 key={rowIndex}
-                className={rowIndex % 2 === 0 ? "bg-blue-50" : ""}
+                className={rowIndex % 2 === 0 ? "bg-primary/5" : ""}
               >
                 {headers.map((header, hi) => (
                   <TableCell key={hi}>

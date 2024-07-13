@@ -6,9 +6,7 @@
     @apply absolute;
     @apply top-0 left-1/2;
     @apply -translate-x-1/2;
-    /* @apply opacity-0; */
     transition: var(--transition);
-    /* will-change: opacity; */
   }
 
   &:hover,
@@ -17,7 +15,6 @@
     }
 
     .menu {
-      /* opacity: 1; */
       transform: rotateX(0) translateX(-50%);
       visibility: visible;
     }
@@ -31,13 +28,10 @@
 .trigger {
   /* decoration */
   &::after {
-    content: "";
+    content: "\203A";
     display: block;
-    border: 0.35rem solid transparent;
-    background: red;
-    border-top-color: rgba(#666, 0.45);
-    margin-left: 0.25em;
-    transform: translateY(0.15em);
+    margin-left: 0.5rem;
+    transform: rotate(90deg);
   }
 }
 

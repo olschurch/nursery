@@ -5,7 +5,11 @@ import { Hero } from "@/components/Hero/Hero";
 export default function Programs() {
   return (
     <main>
-      <Hero src="https://olschurch.com/wp-content/uploads//whatshappening-1.jpeg" />
+      <Hero
+        src="/room_3.jpg"
+        alt="A room inside the nursery"
+        objectPosition="bottom left"
+      />
       <article className={styles.article}>
         <div className={styles.links}>
           <Link href="#infants">Infants</Link>

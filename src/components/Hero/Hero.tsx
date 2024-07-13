@@ -2,7 +2,15 @@
 
 import styles from "./Hero.module.css";
 
-export function Hero({ src }: { src: string }) {
+export function Hero({
+  src,
+  alt,
+  objectPosition,
+}: {
+  src: string;
+  alt: string;
+  objectPosition?: string;
+}) {
   return (
     <div className={styles["image-wrapper"]}>
       <figure>
@@ -10,8 +18,13 @@ export function Hero({ src }: { src: string }) {
           width={800}
           height={500}
           loading="eager"
-          alt="classroom"
+          alt={alt}
           src={src}
+          style={{
+            ...(objectPosition && {
+              objectPosition,
+            }),
+          }}
         />
       </figure>
     </div>

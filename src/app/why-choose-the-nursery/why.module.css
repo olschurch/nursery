@@ -1,0 +1,13 @@
+.article {
+  @apply max-w-xl mx-auto;
+  ul {
+    @apply font-bold text-primary text-xl lg:text-3xl;
+    span {
+      @apply mt-4 block;
+    }
+    li {
+      @apply font-normal text-foreground text-base;
+      @apply list-disc ml-4;
+    }
+  }
+}

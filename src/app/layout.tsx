@@ -4,6 +4,7 @@ import { Raleway } from "next/font/google";
 import { Nav } from "@/components/Nav/Nav";
 import clsx from "clsx";
 import { Footer } from "@/components/Footer";
+import Head from "next/head";
 
 const googleFont = Raleway({ subsets: ["latin"], weight: ["400", "700"] });
 

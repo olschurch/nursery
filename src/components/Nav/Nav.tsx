@@ -35,9 +35,13 @@ export function Nav({ className }: { className: string }) {
 
             <NavigationMenuItem>
               <Dropdown title="Learn">
-                <DropdownMenuLinkItem href="/about" text="About Us" />
+                <DropdownMenuLinkItem
+                  href="/why-choose-the-nursery"
+                  text="Why Choose The Nursery?"
+                />
                 <DropdownMenuLinkItem href="/tuition" text="Tuition" />
                 <DropdownMenuLinkItem href="/faq" text="FAQ" />
+                <DropdownMenuLinkItem href="/history" text="History" />
               </Dropdown>
             </NavigationMenuItem>
 

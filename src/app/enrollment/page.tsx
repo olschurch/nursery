@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import styles from "./page.module.css";
 
 /*
@@ -30,15 +31,13 @@ Tuition Fees are adjusted annually on July 1st.
 
 export default function Enrollment() {
   return (
-    <section className={styles.enrollment}>
-      <h2>Enrollment & Tuition Schedule</h2>
-      <article>
-        <h2>Tuition Fee Schedule</h2>
-        <p>Our tuition fee is weekly and for five full time days.</p>
-        <ul>
-          <li>Infants (Six weeks to 18 months) – $461</li>
-        </ul>
+    <main className="p-4">
+      <article className="max-w-xl mx-auto my-8">
+        <h1 className="text-3xl text-primary font-bold">Enrollment</h1>
+        <section className={styles.enrollment}>
+          <Button>Google Form</Button>
+        </section>
       </article>
-    </section>
+    </main>
   );
 }
