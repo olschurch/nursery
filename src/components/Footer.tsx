@@ -15,7 +15,7 @@ export function Footer() {
       <div className={styles.group}>
         <h2>Hours</h2>
         <p>Monday–Friday</p>
-        <p>8:30am–6:00pm</p>
+        <p>7:30am–5:30pm</p>
       </div>
     </footer>
   );

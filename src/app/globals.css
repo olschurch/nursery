@@ -8,7 +8,7 @@
 /* clip-path: ellipse(82% 66% at 51% 34%);*/
 
 :root {
-  --hue: 250;
+  --hue: 240;
 }
 
 @layer base {
@@ -75,9 +75,5 @@
   }
   body {
     @apply bg-background text-foreground;
-  }
-
-  main {
-    min-height: 70vh;
   }
 }

@@ -1,7 +1,7 @@
 import { JSDOM } from "jsdom";
 import styles from "./page.module.css";
 
-export async function getData() {
+async function getData() {
   const res = await fetch(
     "https://docs.google.com/document/d/e/2PACX-1vQ4cv_cFJE9Ff2chhpZuJ6nSmFczGP_v_ZocNPMu41UQzpRUhqaNEZ9RAKqThTt7medn-rH7M3XvKKn/pub?embedded=true"
   );
@@ -50,7 +50,6 @@ export async function getData() {
 }
 export default async function News() {
   const data = await getData();
-  console.log({ data });
   return (
     <main className={styles.main}>
       <div>

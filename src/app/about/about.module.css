@@ -1,0 +1,21 @@
+.article {
+  @apply max-w-xl mx-auto my-8;
+  p {
+    @apply my-4;
+    &:first-child {
+      &:first-line {
+        @apply font-bold;
+      }
+    }
+  }
+
+  ul {
+    @apply font-bold;
+
+    li {
+      @apply font-normal;
+
+      @apply list-disc;
+    }
+  }
+}

@@ -9,12 +9,11 @@ export default function Programs() {
       <article className={styles.article}>
         <div className={styles.links}>
           <Link href="#infants">Infants</Link>
-          <Link href="#waddlers">Waddlers</Link>
           <Link href="#toddlers">Toddlers</Link>
         </div>
         <section>
           <h2 id="infants">Infants</h2>
-          <h3>Six until 12 Weeks TK</h3>
+          <h3>Six weeks until 18 months</h3>
           <p>
             At The Nursery, we foster a strong partnership with parents,
             providing a nurturing environment for infants aged 6 weeks to 12
@@ -29,28 +28,10 @@ export default function Programs() {
             loving, and enriching environment for your infant to thrive.
           </p>
         </section>
+
         <section>
-          <h2 id="waddlers">Waddlers</h2>
-          <h3>12 - 24 Months</h3>
-          <p>
-            In our Waddler classroom, we support the transition from infant to
-            toddler by using cots for rest and small tables and chairs for
-            meals. Children begin self-feeding, saying their first words, and
-            moving from two naps to one. Social interaction skills, expressive
-            language, and fine and gross motor skills are developed through
-            age-appropriate toys and activities. Our Emergent Curriculum model
-            allows children to lead based on their interests, enriching their
-            learning experience. Group snack and lunch times teach social skills
-            and manners, with snacks provided and lunches brought from home.
-            Naptime after lunch features quiet music and back-rubbing to help
-            children rest, with quiet activities available for non-sleepers.
-            This exciting period of growth is marked by meaningful play and
-            learning.
-          </p>
-        </section>
-        <section>
-          <h2 id="toddlers">Toddlers</h2>
-          <h3>TK Until TK</h3>
+          <h2 id="toddlers">Waddlers</h2>
+          <h3>19 months until three years </h3>
           <p>
             At The Nursery, we support toddlers as they develop self-help skills
             like feeding themselves, using the toilet, and dressing. Our
