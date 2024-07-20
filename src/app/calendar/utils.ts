@@ -1,5 +1,5 @@
-import { parse } from "csv-parse";
-import dayjs, { Dayjs } from "dayjs";
+import { parse } from 'csv-parse';
+import dayjs, { Dayjs } from 'dayjs';
 export function parsePromise(str: string): Promise<string[][]> {
   return new Promise((resolve, reject) => {
     parse(str, (err, records) => {
@@ -37,8 +37,8 @@ export function csvRowsToJson(data: string[][]) {
     const obj: Record<string, string | number> = {};
     header.forEach((key, index) => {
       const hKey = key.toLowerCase().trim();
-      let value = (row[index] || "").trim();
-      if (hKey === "date") {
+      let value = (row[index] || '').trim();
+      if (hKey === 'date') {
         const d = dayjs(value);
         value = d.toISOString();
       }
@@ -65,7 +65,7 @@ export function sortByDate(data: Record<string, string | number>[]) {
 
 export async function getData() {
   if (!process.env.SHEETS_URL) {
-    throw new Error("No sheets url in env");
+    throw new Error('No sheets url in env');
   }
 
   const res = await fetch(process.env.SHEETS_URL);

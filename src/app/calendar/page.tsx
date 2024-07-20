@@ -5,13 +5,18 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { getData } from "./utils";
-import dayjs from "dayjs";
-import clsx from "clsx";
+} from '@/components/ui/table';
+import { getData } from './utils';
+import dayjs from 'dayjs';
+import clsx from 'clsx';
+import { loadSheet } from '@/lib/gsheet';
 
 export default async function Calendar() {
   const { keyed: data } = await getData();
+  const sheetData = await loadSheet(
+    '1Gi_muV6F5TqTYGJRlpbWc8UfsTaG94FeCV24dmFLq88',
+  );
+  console.log({ sheetData });
   const headers = Object.keys(data[0]);
 
   return (
@@ -26,9 +31,9 @@ export default async function Calendar() {
               {headers.map((cell, i) => (
                 <TableHead
                   key={cell}
-                  className={clsx("capitalize", {
-                    "w-48": cell === "date",
-                    "w-72": cell === "description",
+                  className={clsx('capitalize', {
+                    'w-48': cell === 'date',
+                    'w-72': cell === 'description',
                   })}
                 >
                   {cell}
@@ -40,13 +45,13 @@ export default async function Calendar() {
             {data.map((row, rowIndex) => (
               <TableRow
                 key={rowIndex}
-                className={rowIndex % 2 === 0 ? "bg-primary/5" : ""}
+                className={rowIndex % 2 === 0 ? 'bg-primary/5' : ''}
               >
                 {headers.map((header, hi) => (
                   <TableCell key={hi}>
-                    {header === "date"
-                      ? dayjs(row[header]).format("dddd, MMM DD, YYYY")
-                      : row[header] || "–"}
+                    {header === 'date'
+                      ? dayjs(row[header]).format('dddd, MMM DD, YYYY')
+                      : row[header] || '–'}
                   </TableCell>
                 ))}
               </TableRow>

@@ -1,11 +1,21 @@
 .main {
   @apply px-4;
   div {
-    @apply w-full mx-auto max-w-3xl bg-white;
-    @apply rounded-lg shadow-xl;
+    @apply w-full mx-auto max-w-xl;
+    @apply rounded-lg;
     @apply mt-8 mb-16;
-    iframe {
-      @apply w-full mx-auto block min-h-[100vh];
+    @apply p-8;
+    :global(p.title) {
+      @apply text-primary text-3xl;
+    }
+
+    :global(p:not(.title)) {
+      @apply my-4;
+    }
+
+    :global(img) {
+      @apply my-4;
+      @apply w-full;
     }
   }
 }

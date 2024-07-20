@@ -73,9 +73,9 @@
       @apply absolute top-0 left-0 right-0 bottom-0;
       @apply text-white;
       text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-      @apply max-w-3xl mx-auto;
+      @apply max-w-xl mx-auto;
       @apply flex items-center justify-center text-center p-4;
-      @apply text-3xl md:text-5xl lg:text-8xl font-bold;
+      @apply text-2xl md:text-4xl lg:text-6xl font-bold;
     }
     img {
       /* using: https://www.wavegenerator.app/ */

@@ -1,60 +1,47 @@
-import { JSDOM } from "jsdom";
-import styles from "./page.module.css";
+import { JSDOM } from 'jsdom';
+import sanitizeHtml from 'sanitize-html';
+import styles from './page.module.css';
+
+const DEFAULT_IMAGE_WIDTH = 500;
+const DEFAULT_ASPECT = 4 / 3;
 
 async function getData() {
-  const res = await fetch(
-    "https://docs.google.com/document/d/e/2PACX-1vQ4cv_cFJE9Ff2chhpZuJ6nSmFczGP_v_ZocNPMu41UQzpRUhqaNEZ9RAKqThTt7medn-rH7M3XvKKn/pub?embedded=true"
-  );
-  const text = await res.text();
-  const dom = new JSDOM(text);
-  return `
-  <style>
-    body {
-      padding: 2rem;
-      font-family: 'PT_Serif', serif;
-      color: hsl(214.74 50.67% 29.41%);
-    }
+  try {
+    const res = await fetch(
+      'https://docs.google.com/document/d/e/2PACX-1vQ4cv_cFJE9Ff2chhpZuJ6nSmFczGP_v_ZocNPMu41UQzpRUhqaNEZ9RAKqThTt7medn-rH7M3XvKKn/pub?embedded=true',
+    );
+    const text = await res.text();
+    const dom = new JSDOM(text);
 
-    p {
-    font-size: 1.33rem;
-    line-height: 1.3;
-    }
-    .title {
-      font-size: 36px;
-    }
+    const docContent = dom.window.document.body.querySelector('.doc-content');
 
-    @media (min-width: 760px){
-      .title {
-        font-size: 48px;
-      } 
-    }
+    // find all images and add loading=lazy to them
+    const images = docContent?.querySelectorAll('img');
+    images?.forEach((image) => {
+      image.setAttribute('loading', 'lazy');
+      image.width = DEFAULT_IMAGE_WIDTH;
+      image.height = DEFAULT_IMAGE_WIDTH / DEFAULT_ASPECT;
+    });
 
-    @media (min-width: 1020px){
-      .title {
-        font-size: 72px;
-      } 
-    }
+    const dirty = docContent?.innerHTML ?? '';
 
-
-    span:has(img),img {
-      display: block;
-      border-radius: 5px;
-      width: 100% !important;
-      height: auto !important;
-    }
-  </style>
-  <body>${
-    dom.window.document.body.querySelector(".doc-content")?.innerHTML
-  }</body>
-  `;
+    return sanitizeHtml(dirty, {
+      allowedTags: ['p', 'span', 'img'],
+      allowedClasses: {
+        '*': false,
+      },
+    });
+  } catch (err) {
+    console.error(err);
+    return '<p>Sorry, unable to fetch newsletter</p>';
+  }
 }
 export default async function News() {
   const data = await getData();
+
   return (
     <main className={styles.main}>
-      <div>
-        <iframe srcDoc={data} />
-      </div>
+      <div dangerouslySetInnerHTML={{ __html: data ?? '' }}></div>
     </main>
   );
 }

@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 
-import styles from "./Hero.module.css";
+import styles from './Hero.module.css';
 
 export function Hero({
   src,
@@ -14,7 +14,7 @@ export function Hero({
   objectPosition?: string;
 }) {
   return (
-    <div className={styles["image-wrapper"]}>
+    <div className={styles['image-wrapper']}>
       <figure>
         <img
           width={800}
@@ -28,8 +28,12 @@ export function Hero({
             }),
           }}
         />
-        {text && <div className={styles.overlay} />}
-        {text && <div className={styles.text}>{text}</div>}
+        {text && <div className={styles.overlay} data-testid="overlay" />}
+        {text && (
+          <div className={styles.text}>
+            <h1>{text}</h1>
+          </div>
+        )}
       </figure>
     </div>
   );
