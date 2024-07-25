@@ -1,5 +1,4 @@
 .section {
-  @apply text-sm;
   p {
     @apply mt-1 text-xs;
   }

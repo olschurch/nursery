@@ -1,5 +1,5 @@
-import { Hero } from "@/components/Hero/Hero";
-import styles from "./why.module.css";
+import { Hero } from '@/components/Hero/Hero';
+import styles from './why.module.css';
 export default function WhyChoose() {
   return (
     <>
@@ -14,8 +14,11 @@ export default function WhyChoose() {
           <ul>
             <span>Convenience</span>
             <li>
-              Open all year, except for the major holidays Monday thru Friday,
-              7:30am-5:30pm
+              Open all year, except for the major holidays{' '}
+              <time className="font-bold">
+                Monday thru Friday, 7:30am-5:30pm
+              </time>
+              .
             </li>
             <li>
               Caring for children 6 weeks to 3 years old. Together with Our Lady
@@ -29,7 +32,7 @@ export default function WhyChoose() {
             <li>Walking distance to South Orange Train Station</li>
             <li>
               Free all-day parking available to commuter parents on a
-              first-come, first-served basis{" "}
+              first-come, first-served basis{' '}
             </li>
           </ul>
           <ul>

@@ -1,13 +1,13 @@
 .article {
   @apply max-w-xl mx-auto;
   ul {
-    @apply font-bold text-primary text-xl lg:text-3xl;
+    @apply font-bold text-primary text-lg;
     span {
       @apply mt-4 block;
     }
     li {
-      @apply font-normal text-foreground text-base;
-      @apply list-disc ml-4;
+      @apply font-normal text-foreground;
+      @apply list-disc ml-4 my-2;
     }
   }
 }

@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import styles from "./page.module.css";
+import { Button } from '@/components/ui/button';
+import styles from './page.module.css';
 
 /*
 Enrollment & Tuition Schedule
@@ -33,10 +33,20 @@ export default function Enrollment() {
   return (
     <main className="p-4">
       <article className="max-w-xl mx-auto my-8">
-        <h1 className="text-3xl text-primary font-bold">Enrollment</h1>
-        <section className={styles.enrollment}>
-          <Button>Google Form</Button>
-        </section>
+        <h1 className="text-3xl text-primary font-bold">Enrollment Process</h1>
+        <p>
+          The first step in obtaining enrollment is completing an application
+          form, which can be done online.
+        </p>
+        <div className="my-2">
+          <Button>Enroll Now</Button>
+        </div>
+        <p className="my-8">
+          <small className="italic leading-2 block">
+            Once we receive your application, we will reach out to you regarding
+            payment of the $100 nonrefundable application fee. TK
+          </small>
+        </p>
       </article>
     </main>
   );

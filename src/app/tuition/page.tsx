@@ -5,18 +5,19 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import styles from "./tuition.module.css";
+} from '@/components/ui/table';
+import styles from './tuition.module.css';
+import { Hero } from '@/components/Hero/Hero';
 
 export default function Tuition() {
   return (
-    <main className="p-4">
-      <article className="max-w-xl mx-auto my-8">
-        <h1 className="text-xl text-primary font-bold">
-          2024-2025 Tuition Schedule
-        </h1>
-        <p>Our tuition fee is weekly and is for five full time days.</p>
-        <Table className="my-4">
+    <main>
+      <Hero text="2024-2025 Tuition Schedule" />
+      <article className="max-w-xl mx-auto my-8 px-4">
+        <p>
+          <strong>Tuition fee is weekly and is for five full time days.</strong>
+        </p>
+        <Table className="my-4 text-base">
           <TableHeader>
             <TableRow>
               <TableHead>Group</TableHead>

@@ -6,7 +6,7 @@
     @apply mt-8 mb-16;
     @apply p-8;
     :global(p.title) {
-      @apply text-primary text-3xl;
+      @apply text-primary text-3xl font-bold;
     }
 
     :global(p:not(.title)) {

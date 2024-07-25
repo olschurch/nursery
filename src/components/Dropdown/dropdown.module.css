@@ -1,8 +1,10 @@
 .wrapper {
   --transition: 150ms all 20ms ease-out;
-  @apply relative max-w-[100px] w-auto;
+  @apply relative w-auto;
+  @apply mx-4;
+
   &:after {
-    content: "";
+    content: '';
     @apply absolute;
     @apply top-0 left-1/2;
     @apply -translate-x-1/2;
@@ -11,24 +13,39 @@
 
   &:hover,
   &:focus-within {
-    .trigger {
-    }
-
     .menu {
       transform: rotateX(0) translateX(-50%);
       visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
     }
 
     &:after {
       opacity: 1;
     }
   }
+
+  &.linkClicked {
+    pointer-events: none;
+
+    .menu {
+      transform: rotateX(-90deg) translateX(-50%) !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
+    &:after {
+      opacity: 0 !important;
+    }
+  }
 }
 
 .trigger {
+  pointer-events: auto;
   /* decoration */
   &::after {
-    content: "\203A";
+    content: '\203A';
     display: block;
     margin-left: 0.5rem;
     transform: rotate(90deg);
@@ -36,19 +53,21 @@
 }
 
 .menu {
-  @apply absolute left-1/2 top-8;
-  @apply py-4;
+  @apply absolute left-[calc(100%-20px)] top-9;
+  @apply py-0;
   @apply bg-background;
   @apply origin-top;
-  min-width: 15ch;
+  min-width: 20ch;
   transition: var(--transition);
   transform: rotateX(-90deg) translateX(-50%);
   visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
   @apply shadow rounded;
+
   a {
     display: block;
     padding: 0.5em;
-
     transition: 0.35rem solid transparent;
 
     &:hover {
