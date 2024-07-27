@@ -44,7 +44,7 @@ export default function Enrollment() {
         <p className="my-8">
           <small className="italic leading-2 block">
             Once we receive your application, we will reach out to you regarding
-            payment of the $100 nonrefundable application fee. TK
+            payment of the $250 nonrefundable application fee. TK
           </small>
         </p>
       </article>

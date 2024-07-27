@@ -45,10 +45,8 @@ export function Nav({ className }: { className: string }) {
                   text="Why Choose The Nursery?"
                 />
 
-                <DropdownMenuLinkItem
-                  href="/parent-partnership"
-                  text="Parent Partnership"
-                />
+                <DropdownMenuLinkItem href="/calendar" text="Calendar" />
+                <DropdownMenuLinkItem href="/news" text="News" />
                 <DropdownMenuLinkItem href="/tuition" text="Tuition" />
               </Dropdown>
             </NavigationMenuItem>
@@ -60,38 +58,19 @@ export function Nav({ className }: { className: string }) {
                   text="Toddlers"
                 />
                 <DropdownMenuLinkItem
-                  href="/daily-schedule"
+                  href="/programs/daily-schedule"
                   text="Daily Schedule"
                 />
               </Dropdown>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/calendar" legacyBehavior passHref>
-                <NavigationMenuLink
-                  className={clsx(navigationMenuTriggerStyle())}
-                >
-                  Calendars
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/news" legacyBehavior passHref>
-                <NavigationMenuLink
-                  className={clsx(navigationMenuTriggerStyle())}
-                >
-                  News
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/enrollment" legacyBehavior passHref>
-                <NavigationMenuLink
-                  className={clsx(navigationMenuTriggerStyle(), styles.action)}
-                >
-                  Enrollment
-                </NavigationMenuLink>
-              </Link>
+              <div className={styles.action}>
+                <Dropdown title="Admissions">
+                  <DropdownMenuLinkItem href="/tuition" text="Tuition" />
+                  <DropdownMenuLinkItem href="/enrollment" text="Enrollment" />
+                </Dropdown>
+              </div>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>

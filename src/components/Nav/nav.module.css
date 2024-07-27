@@ -24,7 +24,8 @@
   }
   li a,
   li button {
-    @apply text-xs text-foreground;
+    @apply font-semibold;
+    @apply text-xs text-primary hover:text-foreground;
     @media (min-width: 768px) {
       @apply text-base;
     }
@@ -32,6 +33,19 @@
 }
 
 .action {
-  @apply font-bold;
-  @apply bg-primary ml-8 !text-background py-2 rounded active:bg-foreground;
+  @apply font-bold px-0;
+  @apply bg-primary ml-8 !text-background rounded active:bg-foreground hover:bg-foreground;
+  &:focus {
+    @apply ring-2;
+  }
+  & > div {
+    @apply w-full block;
+  }
+  button {
+    @apply font-semibold m-0 p-2;
+    @apply text-xs !text-background hover:bg-transparent;
+    @media (min-width: 768px) {
+      @apply text-base;
+    }
+  }
 }

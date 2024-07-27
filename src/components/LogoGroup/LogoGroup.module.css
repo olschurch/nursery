@@ -16,7 +16,7 @@
       }
       h2 {
         @apply text-[10px] text-center leading-3 -translate-x-0;
-        @apply italic text-foreground;
+        @apply italic text-foreground font-normal;
       }
     }
   }

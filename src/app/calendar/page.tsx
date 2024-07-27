@@ -10,6 +10,7 @@ import dayjs from 'dayjs';
 import clsx from 'clsx';
 import { loadCalendarFromSheet } from '@/lib/gsheet';
 import { Hero } from '@/components/Hero/Hero';
+import Link from 'next/link';
 
 export const revalidate = 600;
 
@@ -18,9 +19,24 @@ export default async function Calendar() {
 
   const headers = Object.keys(sheetData[0] || {});
 
+  function renderCell(key: string, value: string | number, index: number) {
+    if (key === 'Date') {
+      return dayjs(value).format('ddd, MMM DD, YYYY');
+    }
+    if (key === 'Link' && value) {
+      return (
+        <Link href={value as string} className="underline">
+          More Info
+        </Link>
+      );
+    }
+
+    return value;
+  }
+
   return (
     <main>
-      <Hero objectPosition="bottom left" text="Daily Schedule" />
+      <Hero objectPosition="bottom left" text="Nursery Calendar" />
       <section className="my-8 px-4">
         <Table className="max-w-3xl mx-auto text-sm border p-2 bg-white rounded my-4">
           <TableHeader>
@@ -49,9 +65,7 @@ export default async function Calendar() {
                     key={i}
                     className="text-xs md:text-sm lg:text-base"
                   >
-                    {key === 'Date'
-                      ? dayjs(val).format('dddd, MMM DD, YYYY')
-                      : val}
+                    {renderCell(key, val, i)}
                   </TableCell>
                 ))}
               </TableRow>

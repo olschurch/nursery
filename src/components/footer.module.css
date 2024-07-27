@@ -10,6 +10,14 @@
   a:not(:global(.logo-group)) {
     @apply border-b border-b-current;
   }
+
+  h2 {
+    @apply font-bold;
+  }
+}
+
+.tel {
+  @apply my-2;
 }
 
 .group {

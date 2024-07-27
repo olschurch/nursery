@@ -27,6 +27,7 @@ export async function loadCalendarFromSheet(id: string) {
     Time: row.get('Time'),
     Event: row.get('Event'),
     Description: row.get('Description'),
+    Link: row.get('Link'),
   }));
 
   return filterOutPreviousEvents(sortByDate(objArr));

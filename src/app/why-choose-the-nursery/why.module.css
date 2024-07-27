@@ -1,5 +1,21 @@
 .article {
   @apply max-w-xl mx-auto;
+  h2 {
+    @apply font-bold text-primary text-2xl;
+    @apply mt-4;
+  }
+
+  h3 {
+    @apply font-bold text-foreground text-lg;
+    @apply mt-4;
+  }
+  p {
+    @apply text-lg;
+  }
+
+  section {
+    @apply my-4;
+  }
   ul {
     @apply font-bold text-primary text-lg;
     span {

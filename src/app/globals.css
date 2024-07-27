@@ -69,7 +69,7 @@
 @layer base {
   :root {
     --padding: 2rem;
-    --nav-height: 110px;
+    --nav-height: 100px;
     --background: var(--hue) 80% 99.08%;
     --foreground: var(--hue) 50.67% 29.41%;
     --card: 0 0% 100%;

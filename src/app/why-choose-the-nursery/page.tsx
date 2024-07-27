@@ -11,63 +11,85 @@ export default function WhyChoose() {
       />
       <main className="p-4">
         <article className={styles.article}>
-          <ul>
-            <span>Convenience</span>
-            <li>
-              Open all year, except for the major holidays{' '}
-              <time className="font-bold">
-                Monday thru Friday, 7:30am-5:30pm
-              </time>
-              .
-            </li>
-            <li>
-              Caring for children 6 weeks to 3 years old. Together with Our Lady
-              of Sorrows School preschool and elementary school, our campus
-              cares for and educates children from the Nursery through Grade 8.
-            </li>
-            <li>
-              Web cameras in each room: you can follow your child&#39;s day on
-              our password-protected website
-            </li>
-            <li>Walking distance to South Orange Train Station</li>
-            <li>
-              Free all-day parking available to commuter parents on a
-              first-come, first-served basis{' '}
-            </li>
-          </ul>
-          <ul>
-            <span>Safety</span>
-            <li>Secure door access through individual family codes</li>
-            <li>Age appropriate outdoor play yard </li>
-            <li>All staff trained in CPR and First Aid</li>
-          </ul>
-          <ul>
-            <span>Family Friendly</span>
-            <li>Open door policy</li>
-            <li>Lactation Room</li>
-            <li>
-              Parent Partnership Policy: we work with families for consistent
-              care
-            </li>
-            <li>Family Fun Activities</li>
-          </ul>
-          <ul>
-            <span>Earth Friendly</span>
-            <li>Only “green” non-toxic cleaners</li>
-            <li>Air filtration insures good air quality</li>
-            <li>We recycle grocery bags for diaper disposal</li>
-            <li>Only Energy Star appliances and machines</li>
-          </ul>
-          <ul>
-            <span>Quality Care</span>
-            <li>
-              We follow the Infant Toddler Environment Rating Scale (ITERS)
-              standards and use the National Association for the Education of
-              Young Children (NAEYC) standards as our guidelines. The Nursery at
-              Our Lady of Sorrows - a new fashioned center with old fashioned
-              values
-            </li>
-          </ul>
+          <section>
+            <h2>Our Features</h2>
+            <h3>Convenience</h3>
+            <ul>
+              <li>
+                Open year-round: Monday-Friday, 7:30am-5:30pm (except major
+                holidays)
+              </li>
+              <li>Care for children 6 weeks to 3 years old</li>
+              <li>Web cameras in each room for parents</li>
+              <li>
+                Close to South Orange Train Station with free all-day parking
+                for parents
+              </li>
+            </ul>
+
+            <h3>Safety</h3>
+            <ul>
+              <li>Secure door access with family codes</li>
+              <li>Age-appropriate outdoor play area</li>
+              <li>CPR and First Aid trained staff</li>
+            </ul>
+
+            <h3>Family-Friendly</h3>
+            <ul>
+              <li>Open door policy</li>
+              <li>Lactation room available</li>
+              <li>Parent partnership for consistent care</li>
+              <li>Family activities</li>
+            </ul>
+
+            <h3>Eco-Friendly</h3>
+            <ul>
+              <li>Non-toxic “green” cleaners</li>
+              <li>Air filtration system</li>
+              <li>Recycling practices</li>
+              <li>Energy Star appliances</li>
+            </ul>
+
+            <h3>Quality Care</h3>
+            <p>
+              We follow ITERS standards and NAEYC guidelines for high-quality
+              early childhood education.
+            </p>
+          </section>
+
+          <section>
+            <h2>Parent Partnership</h2>
+            <p>
+              We believe in family involvement and shared decision-making. Our
+              partnership creates a caring community for families, caregivers,
+              and children.
+            </p>
+
+            <h3>How We Involve Families</h3>
+            <ul>
+              <li>Open door policy for visits and calls</li>
+              <li>Parent library with helpful resources</li>
+              <li>Parenting workshops</li>
+              <li>Family events and social gatherings</li>
+              <li>Regular communications and updates</li>
+              <li>
+                Opportunities for parents to share talents and join activities
+              </li>
+              <li>Annual program survey for feedback</li>
+            </ul>
+
+            <h3>Our Partnership Beliefs</h3>
+            <ul>
+              <li>Parents are experts on their children</li>
+              <li>Each child has a Primary Caregiver as their advocate</li>
+              <li>
+                Continuous exchange of information between parents and staff
+              </li>
+              <li>
+                Success depends on mutual respect, communication, and teamwork
+              </li>
+            </ul>
+          </section>
         </article>
       </main>
     </>
