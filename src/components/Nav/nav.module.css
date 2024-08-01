@@ -6,17 +6,24 @@
   @apply z-10;
   @apply py-4;
   @apply bg-background z-20;
-  height: var(--nav-height, 100px);
+  @apply h-20 md:h-28 lg:h-20;
 }
 
 .desktop {
-  @apply hidden;
-  @media (min-width: 620px) {
-    @apply block;
-  }
+  @apply hidden md:block;
 }
 
-.group {
+/* mobile */
+.mobile {
+  @apply block md:hidden;
+}
+
+.mobile--toggle {
+  @apply absolute top-1/3 right-4;
+  @apply w-6 h-6 text-primary;
+  svg {
+    @apply w-full h-full;
+  }
 }
 
 .menu {
@@ -24,11 +31,8 @@
   }
   li a,
   li button {
-    @apply font-semibold;
-    @apply text-xs text-primary hover:text-foreground;
-    @media (min-width: 768px) {
-      @apply text-base;
-    }
+    @apply text-primary hover:text-foreground;
+    @apply text-xs md:text-sm lg:text-base;
   }
 }
 

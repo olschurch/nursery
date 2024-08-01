@@ -1,7 +1,8 @@
 .wrapper {
   --transition: 150ms all 20ms ease-out;
   @apply relative w-auto;
-  @apply mx-2;
+  @apply mx-1;
+  @apply font-normal;
 
   &:after {
     content: '';

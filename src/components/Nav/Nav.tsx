@@ -2,7 +2,16 @@
 import styles from './nav.module.css';
 
 import Link from 'next/link';
-
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from '@/components/ui/drawer';
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -13,6 +22,9 @@ import {
 import clsx from 'clsx';
 import { LogoGroup } from '../LogoGroup/LogoGroup';
 import { Dropdown, DropdownMenuLinkItem } from '../Dropdown/Dropdown';
+import { HamburgerMenuIcon } from '@radix-ui/react-icons';
+import { useState } from 'react';
+import { Button } from '../ui/button';
 
 const programs: { title: string; href: string; description: string }[] = [
   {
@@ -30,11 +42,38 @@ const programs: { title: string; href: string; description: string }[] = [
 ];
 
 export function Nav({ className }: { className: string }) {
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
+  function toggleNav() {
+    setMobileNavOpen((o) => !o);
+  }
+
   return (
     <nav className={clsx(styles.nav)}>
       <div className={styles.group}>
         <LogoGroup />
       </div>
+
+      <div className={clsx(styles.mobile)}>
+        <Drawer>
+          <DrawerTrigger>Open</DrawerTrigger>
+          <DrawerContent>
+            <DrawerHeader>
+              <DrawerTitle>Are you absolutely sure?</DrawerTitle>
+              <DrawerDescription>
+                This action cannot be undone.
+              </DrawerDescription>
+            </DrawerHeader>
+            <DrawerFooter>
+              <Button>Submit</Button>
+              <DrawerClose>
+                <Button variant="outline">Cancel</Button>
+              </DrawerClose>
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
+      </div>
+
       <div className={clsx(styles.group, styles.desktop)}>
         <NavigationMenu className={styles.menu}>
           <NavigationMenuList>
@@ -47,7 +86,6 @@ export function Nav({ className }: { className: string }) {
 
                 <DropdownMenuLinkItem href="/calendar" text="Calendar" />
                 <DropdownMenuLinkItem href="/news" text="News" />
-                <DropdownMenuLinkItem href="/tuition" text="Tuition" />
               </Dropdown>
             </NavigationMenuItem>
             <NavigationMenuItem>
@@ -65,12 +103,26 @@ export function Nav({ className }: { className: string }) {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <div className={styles.action}>
-                <Dropdown title="Admissions">
-                  <DropdownMenuLinkItem href="/tuition" text="Tuition" />
-                  <DropdownMenuLinkItem href="/enrollment" text="Enrollment" />
-                </Dropdown>
-              </div>
+              <Link href="/calendar">
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Calendar
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <Dropdown title="Admissions">
+                <DropdownMenuLinkItem href="/tuition" text="Tuition" />
+                <DropdownMenuLinkItem href="/enrollment" text="Enrollment" />
+              </Dropdown>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <Link href="/enrollment">
+                <NavigationMenuLink className="!text-background font-bold py-1.5 px-4 bg-primary rounded-full hover:bg-foreground">
+                  Apply Now
+                </NavigationMenuLink>
+              </Link>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
