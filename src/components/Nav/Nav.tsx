@@ -2,16 +2,7 @@
 import styles from './nav.module.css';
 
 import Link from 'next/link';
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from '@/components/ui/drawer';
+import { Drawer, DrawerContent, DrawerTrigger } from '@/components/ui/drawer';
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -23,8 +14,9 @@ import clsx from 'clsx';
 import { LogoGroup } from '../LogoGroup/LogoGroup';
 import { Dropdown, DropdownMenuLinkItem } from '../Dropdown/Dropdown';
 import { HamburgerMenuIcon } from '@radix-ui/react-icons';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '../ui/button';
+import { usePathname } from 'next/navigation';
 
 const programs: { title: string; href: string; description: string }[] = [
   {
@@ -44,9 +36,17 @@ const programs: { title: string; href: string; description: string }[] = [
 export function Nav({ className }: { className: string }) {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
-  function toggleNav() {
-    setMobileNavOpen((o) => !o);
+  const pathname = usePathname();
+
+  function handleOpenChange(val: any) {
+    console.log({ val });
+    setMobileNavOpen(val);
   }
+
+  // close any drawer on route change
+  useEffect(() => {
+    setMobileNavOpen(false);
+  }, [pathname]);
 
   return (
     <nav className={clsx(styles.nav)}>
@@ -55,21 +55,18 @@ export function Nav({ className }: { className: string }) {
       </div>
 
       <div className={clsx(styles.mobile)}>
-        <Drawer>
-          <DrawerTrigger>Open</DrawerTrigger>
-          <DrawerContent>
-            <DrawerHeader>
-              <DrawerTitle>Are you absolutely sure?</DrawerTitle>
-              <DrawerDescription>
-                This action cannot be undone.
-              </DrawerDescription>
-            </DrawerHeader>
-            <DrawerFooter>
-              <Button>Submit</Button>
-              <DrawerClose>
-                <Button variant="outline">Cancel</Button>
-              </DrawerClose>
-            </DrawerFooter>
+        <Drawer open={mobileNavOpen} onOpenChange={handleOpenChange}>
+          <DrawerTrigger className="absolute top-1/3 right-4">
+            <HamburgerMenuIcon className="mt-1 w-6 h-6" />
+          </DrawerTrigger>
+          <DrawerContent className={styles['mobile--drawer']}>
+            <p className="font-bold">NOT DONE YET...</p>
+            <Link href="/why-choose-the-nursery">Why Choose Us?</Link>
+            <Link href="/programs/infants">Infant Program</Link>
+            <Link href="/programs/toddlers">Toddler Program</Link>
+            <Link href="/calendar">Calendar</Link>
+            <Link href="/tuition">Tuition</Link>
+            <Link href="/enrollment">Apply Now</Link>
           </DrawerContent>
         </Drawer>
       </div>
@@ -83,27 +80,24 @@ export function Nav({ className }: { className: string }) {
                   href="/why-choose-the-nursery"
                   text="Why Choose The Nursery?"
                 />
-
-                <DropdownMenuLinkItem href="/calendar" text="Calendar" />
-                <DropdownMenuLinkItem href="/news" text="News" />
-              </Dropdown>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Dropdown title="Programs">
-                <DropdownMenuLinkItem href="/programs/infants" text="Infants" />
+                <DropdownMenuLinkItem
+                  href="/programs/infants"
+                  text="Infant Program"
+                />
                 <DropdownMenuLinkItem
                   href="/programs/toddlers"
-                  text="Toddlers"
+                  text="Toddler Program"
                 />
                 <DropdownMenuLinkItem
                   href="/programs/daily-schedule"
                   text="Daily Schedule"
                 />
+                <DropdownMenuLinkItem href="/news" text="News" />
               </Dropdown>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/calendar">
+              <Link href="/calendar" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   Calendar
                 </NavigationMenuLink>
@@ -118,7 +112,7 @@ export function Nav({ className }: { className: string }) {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/enrollment">
+              <Link href="/enrollment" legacyBehavior passHref>
                 <NavigationMenuLink className="!text-background font-bold py-1.5 px-4 bg-primary rounded-full hover:bg-foreground">
                   Apply Now
                 </NavigationMenuLink>

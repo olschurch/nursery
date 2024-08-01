@@ -6,7 +6,7 @@
   @apply z-10;
   @apply py-4;
   @apply bg-background z-20;
-  @apply h-20 md:h-28 lg:h-20;
+  @apply h-16 md:h-28 lg:h-20;
 }
 
 .desktop {
@@ -23,6 +23,13 @@
   @apply w-6 h-6 text-primary;
   svg {
     @apply w-full h-full;
+  }
+}
+
+.mobile--drawer {
+  @apply p-4;
+  a {
+    @apply block my-2;
   }
 }
 

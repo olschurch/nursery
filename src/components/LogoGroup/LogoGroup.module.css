@@ -1,6 +1,7 @@
 .logo-group-container {
   @apply transition-all block;
   @apply mx-auto;
+  @apply mt-1;
   @apply max-w-[250px];
 
   /* footer */
