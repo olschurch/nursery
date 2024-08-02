@@ -12,6 +12,7 @@ import { Hero } from '@/components/Hero/Hero';
 import Link from 'next/link';
 import { loadCalendarFromSheet } from '@/lib/google';
 
+// Revalidate page every 10 mins
 export const revalidate = 600;
 
 export default async function Calendar() {
