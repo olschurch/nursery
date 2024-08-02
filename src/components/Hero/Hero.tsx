@@ -29,9 +29,7 @@ export function Hero({
             alt={alt}
             src={src}
             style={{
-              ...(objectPosition && {
-                objectPosition,
-              }),
+              ...(objectPosition && { objectPosition }),
             }}
           />
         )}

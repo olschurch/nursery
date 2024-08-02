@@ -17,7 +17,7 @@ export function DropdownMenuLinkItem({
 }) {
   return (
     <li>
-      <Link href={href} onClick={onClick}>
+      <Link href={href} onClick={onClick} className="dropdown--link">
         {text}
       </Link>
     </li>

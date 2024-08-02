@@ -8,16 +8,18 @@ import {
 } from '@/components/ui/table';
 import dayjs from 'dayjs';
 import clsx from 'clsx';
-import { loadCalendarFromSheet } from '@/lib/gsheet';
 import { Hero } from '@/components/Hero/Hero';
 import Link from 'next/link';
+import { loadCalendarFromSheet } from '@/lib/google';
 
 export const revalidate = 600;
 
 export default async function Calendar() {
   const sheetData = await loadCalendarFromSheet(process.env.GOOGLE_SHEET_ID!);
 
-  const headers = Object.keys(sheetData[0] || {});
+  const headers = Object.keys(sheetData[0] || {}).filter(
+    (h) => h !== 'LinkText',
+  );
 
   function renderCell(key: string, value: string | number, index: number) {
     if (key === 'Date') {
@@ -35,10 +37,10 @@ export default async function Calendar() {
   }
 
   return (
-    <main>
+    <>
       <Hero objectPosition="bottom left" text="Nursery Calendar" />
-      <section className="my-8 px-4">
-        <Table className="max-w-3xl mx-auto text-sm border p-2 bg-white rounded my-4">
+      <section className="my-8 px-4 text-lg">
+        <Table className="max-w-3xl mx-auto">
           <TableHeader>
             <TableRow>
               {headers.map((cell, i) => (
@@ -56,15 +58,9 @@ export default async function Calendar() {
           </TableHeader>
           <TableBody>
             {sheetData.map((row, rowIndex) => (
-              <TableRow
-                key={rowIndex}
-                className={rowIndex % 2 === 0 ? 'bg-primary/5' : ''}
-              >
+              <TableRow key={rowIndex}>
                 {Object.entries(row).map(([key, val], i) => (
-                  <TableCell
-                    key={i}
-                    className="text-xs md:text-sm lg:text-base"
-                  >
+                  <TableCell key={i} className="">
                     {renderCell(key, val, i)}
                   </TableCell>
                 ))}
@@ -73,6 +69,6 @@ export default async function Calendar() {
           </TableBody>
         </Table>
       </section>
-    </main>
+    </>
   );
 }

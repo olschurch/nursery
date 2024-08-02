@@ -2,7 +2,7 @@
   /* https://www.wavegenerator.app/ */
   width: 100%;
   overflow: hidden;
-  @apply h-[40vh] landscape:h-[25vh];
+  @apply h-[40vh];
   &.large {
     @apply landscape:h-[70vh];
     figure {
@@ -17,7 +17,7 @@
     @apply relative;
     width: 100%;
     height: 100%;
-    @apply bg-primary;
+    @apply bg-primary/70;
     clip-path: var(--clip);
     .overlay {
       @apply absolute top-0 left-0 right-0 bottom-0;
@@ -27,13 +27,10 @@
     }
     .text {
       @apply absolute top-0 left-0 right-0 bottom-0;
-      @apply text-white;
-      @apply max-w-xl mx-auto;
-      @apply flex items-center justify-center text-center p-4;
+      @apply text-background-lighter;
+      @apply mb-4 lg:ml-8;
+      @apply flex items-end justify-start p-4;
       @apply text-xl md:text-2xl lg:text-3xl font-bold;
-      &.shadow {
-        text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-      }
     }
     img {
       /* using: https://www.wavegenerator.app/ */

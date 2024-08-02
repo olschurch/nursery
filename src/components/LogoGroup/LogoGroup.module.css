@@ -19,7 +19,7 @@
       }
       h2 {
         @apply text-[10px] text-center leading-3 -translate-x-0;
-        @apply italic text-foreground font-normal;
+        @apply text-foreground font-normal;
       }
     }
   }
@@ -40,6 +40,6 @@
   }
   h2 {
     @apply text-xs text-center leading-4 -translate-x-1;
-    @apply italic text-foreground;
+    @apply text-foreground;
   }
 }

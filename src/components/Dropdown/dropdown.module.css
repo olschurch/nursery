@@ -53,9 +53,9 @@
 }
 
 .menu {
-  @apply absolute left-[calc(55%)] top-9;
+  @apply absolute left-[calc(55%)] top-10;
   @apply py-0;
-  @apply bg-background;
+  @apply bg-background-lighter;
   @apply origin-top;
   min-width: 20ch;
   transition: var(--transition);
@@ -67,12 +67,9 @@
 
   a {
     display: block;
+    @apply my-2 px-4 !text-sm !font-normal;
     padding: 0.5em;
     transition: 0.35rem solid transparent;
-
-    &:hover {
-      background-color: rgba(10, 10, 10, 0.15);
-    }
 
     &:focus {
       outline: none;

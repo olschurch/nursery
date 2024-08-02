@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { Hero } from '@/components/Hero/Hero';
 import styles from './index.module.css';
+import { Sacramento } from 'next/font/google';
+const font = Sacramento({ weight: ['400'], subsets: ['latin'] });
 
 export default function Home() {
   return (

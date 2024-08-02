@@ -61,12 +61,26 @@ export function Nav({ className }: { className: string }) {
           </DrawerTrigger>
           <DrawerContent className={styles['mobile--drawer']}>
             <p className="font-bold">NOT DONE YET...</p>
-            <Link href="/why-choose-the-nursery">Why Choose Us?</Link>
-            <Link href="/programs/infants">Infant Program</Link>
-            <Link href="/programs/toddlers">Toddler Program</Link>
-            <Link href="/calendar">Calendar</Link>
-            <Link href="/tuition">Tuition</Link>
-            <Link href="/enrollment">Apply Now</Link>
+            <ul>
+              <li>
+                <Link href="/why-choose-the-nursery">Why Choose Us?</Link>
+              </li>
+              <li>
+                <Link href="/programs/infants">Infant Program</Link>
+              </li>
+              <li>
+                <Link href="/programs/toddlers">Toddler Program</Link>
+              </li>
+              <li>
+                <Link href="/calendar">Calendar</Link>
+              </li>
+              <li>
+                <Link href="/tuition">Tuition</Link>
+              </li>
+              <li>
+                <Link href="/enrollment">Apply Now</Link>
+              </li>
+            </ul>
           </DrawerContent>
         </Drawer>
       </div>
@@ -78,7 +92,7 @@ export function Nav({ className }: { className: string }) {
               <Dropdown title="About">
                 <DropdownMenuLinkItem
                   href="/why-choose-the-nursery"
-                  text="Why Choose The Nursery?"
+                  text="Why Choose Us?"
                 />
                 <DropdownMenuLinkItem
                   href="/programs/infants"
@@ -97,6 +111,13 @@ export function Nav({ className }: { className: string }) {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
+              <Dropdown title="Admissions">
+                <DropdownMenuLinkItem href="/tuition" text="Tuition" />
+                <DropdownMenuLinkItem href="/enrollment" text="Enrollment" />
+              </Dropdown>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
               <Link href="/calendar" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   Calendar
@@ -105,16 +126,9 @@ export function Nav({ className }: { className: string }) {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Dropdown title="Admissions">
-                <DropdownMenuLinkItem href="/tuition" text="Tuition" />
-                <DropdownMenuLinkItem href="/enrollment" text="Enrollment" />
-              </Dropdown>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
               <Link href="/enrollment" legacyBehavior passHref>
-                <NavigationMenuLink className="!text-background font-bold py-1.5 px-4 bg-primary rounded-full hover:bg-foreground">
-                  Apply Now
+                <NavigationMenuLink className="!text-background font-bold py-1.5 px-4 bg-primary rounded-full hover:bg-primary/20 hover:!text-foreground">
+                  Apply
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>

@@ -1,7 +1,7 @@
 .article {
-  @apply my-8;
+  @apply my-8 px-4;
   section {
-    @apply max-w-xl mx-auto;
+    @apply max-w-sm md:max-w-xl mx-auto;
   }
   h2 {
     @apply text-primary font-bold text-3xl;

@@ -29,7 +29,15 @@
 .mobile--drawer {
   @apply p-4;
   a {
-    @apply block my-2;
+    @apply block my-2 font-bold text-primary;
+  }
+
+  ul {
+    @apply pl-4;
+  }
+
+  li {
+    @apply list-disc;
   }
 }
 
@@ -38,25 +46,7 @@
   }
   li a,
   li button {
-    @apply text-primary hover:text-foreground;
-    @apply text-xs md:text-sm lg:text-base;
-  }
-}
-
-.action {
-  @apply font-bold px-0;
-  @apply bg-primary ml-8 !text-background rounded active:bg-foreground hover:bg-foreground;
-  &:focus {
-    @apply ring-2;
-  }
-  & > div {
-    @apply w-full block;
-  }
-  button {
-    @apply font-semibold m-0 p-2;
-    @apply text-xs !text-background hover:bg-transparent;
-    @media (min-width: 768px) {
-      @apply text-base;
-    }
+    @apply m-2 text-primary hover:text-foreground hover:bg-primary/30 rounded-full font-bold;
+    @apply text-xs md:text-sm lg:text-base border-none py-2;
   }
 }
