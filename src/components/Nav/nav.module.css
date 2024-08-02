@@ -50,3 +50,7 @@
     @apply text-xs md:text-sm lg:text-base border-none py-2;
   }
 }
+
+.action {
+  background: yellow !important;
+}

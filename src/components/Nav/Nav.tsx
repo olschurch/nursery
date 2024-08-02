@@ -56,7 +56,7 @@ export function Nav({ className }: { className: string }) {
 
       <div className={clsx(styles.mobile)}>
         <Drawer open={mobileNavOpen} onOpenChange={handleOpenChange}>
-          <DrawerTrigger className="absolute top-1/3 right-4">
+          <DrawerTrigger className="absolute top-1/3 right-4 text-primary">
             <HamburgerMenuIcon className="mt-1 w-6 h-6" />
           </DrawerTrigger>
           <DrawerContent className={styles['mobile--drawer']}>
@@ -127,7 +127,7 @@ export function Nav({ className }: { className: string }) {
 
             <NavigationMenuItem>
               <Link href="/enrollment" legacyBehavior passHref>
-                <NavigationMenuLink className="!text-background font-bold py-1.5 px-4 bg-primary rounded-full hover:bg-primary/20 hover:!text-foreground">
+                <NavigationMenuLink className="!text-background font-bold py-1.5 px-4 bg-primary rounded-full hover:bg-primary/20 hover:!text-foreground !ml-7">
                   Apply
                 </NavigationMenuLink>
               </Link>
