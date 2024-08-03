@@ -2,7 +2,9 @@
 
 import clsx from 'clsx';
 import styles from './Hero.module.css';
+import { Shadows_Into_Light_Two } from 'next/font/google';
 
+const font = Shadows_Into_Light_Two({ subsets: ['latin'], weight: '400' });
 export function Hero({
   src,
   alt,
@@ -43,7 +45,7 @@ export function Hero({
               [styles.shadow]: Boolean(src),
             })}
           >
-            <h1>{text}</h1>
+            <h1 className={clsx(font.className, styles.text)}>{text}</h1>
           </div>
         )}
       </figure>

@@ -17,6 +17,9 @@ import { HamburgerMenuIcon } from '@radix-ui/react-icons';
 import { useEffect, useState } from 'react';
 import { Button } from '../ui/button';
 import { usePathname } from 'next/navigation';
+import { Shadows_Into_Light_Two } from 'next/font/google';
+
+const font = Shadows_Into_Light_Two({ subsets: ['latin'], weight: '400' });
 
 const programs: { title: string; href: string; description: string }[] = [
   {
