@@ -1,5 +1,9 @@
 import { Hero } from '@/components/Hero/Hero';
 import styles from './why.module.css';
+import { Shadows_Into_Light_Two } from 'next/font/google';
+import clsx from 'clsx';
+
+const font = Shadows_Into_Light_Two({ subsets: ['latin'], weight: '400' });
 export default function WhyChoose() {
   return (
     <>
@@ -12,7 +16,7 @@ export default function WhyChoose() {
       <main className="p-4">
         <article className={styles.article}>
           <section>
-            <h2>Our Features</h2>
+            <h2 className={font.className}>Our Features</h2>
             <h3>Convenience</h3>
             <ul>
               <li>
@@ -58,7 +62,7 @@ export default function WhyChoose() {
           </section>
 
           <section>
-            <h2>Parent Partnership</h2>
+            <h2 className={font.className}>Parent Partnership</h2>
             <p>
               We believe in family involvement and shared decision-making. Our
               partnership creates a caring community for families, caregivers,

@@ -131,7 +131,7 @@ export function Nav({ className }: { className: string }) {
             <NavigationMenuItem>
               <Link href="/enrollment" legacyBehavior passHref>
                 <NavigationMenuLink className="!text-background font-bold py-1.5 px-4 bg-primary rounded-full hover:bg-primary/20 hover:!text-foreground !ml-7">
-                  Apply
+                  Enroll
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>

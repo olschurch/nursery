@@ -1,8 +1,8 @@
 .article {
   @apply max-w-xl mx-auto;
   h2 {
-    @apply font-bold text-primary text-2xl;
-    @apply mt-4;
+    @apply font-bold text-primary text-3xl;
+    @apply mt-8;
   }
 
   h3 {
