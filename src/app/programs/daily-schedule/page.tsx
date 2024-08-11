@@ -1,5 +1,5 @@
 import { Hero } from '@/components/Hero/Hero';
-import styles from './daily.module.css';
+import styles from '../programs.module.css';
 
 export default function Philosophy() {
   return (
@@ -15,23 +15,60 @@ export default function Philosophy() {
             learn individually and in groups according to their developmental
             needs and interests. We plan for all areas of development:
             cognitive, language, physical (large and small muscle) and
-            social/emotional. The daily schedule shall include these elements: 
-            Self-directed play and exploration  Story time  Music and movement
-             Outdoor time  Nap time  Snack and mealtimes  Group time (both
-            large and small group)  Diaper changes, hand-washing, and bathroom
-            General Principles considered for planning the schedule:  Each
-            child and each group of children is different so there is no one
-            “right” schedule  Our carefully planned schedules will: 1. Be
-            predictable - routines provide security and comfort for younger
-            children as they grow out of infancy 2. Be flexible - not rigid 3.
-            Include a variety of activities in some form every day  Variety of
-            toys/activities that focus on development of small and large muscles
-             Art, books, music and singing, simple problem solving, cause and
-            effect, and social experiences  Opportunities for visual, auditory,
-            and sensory stimulation 4. Have a balance between activities that
-            are:  Active vs. calm  Individual vs. group  Child-initiated vs.
-            teacher-directed  Indoor vs. outdoor
+            social/emotional.
           </p>
+
+          <p>The daily schedule shall include these elements</p>
+          <ul>
+            <li>Self-directed play and exploration</li>
+            <li>Story time</li>
+            <li>Music and movement</li>
+            <li>Outdoor time</li>
+            <li>Nap time</li>
+            <li>Snack and mealtimes</li>
+            <li>Group time (both large and small group)</li>
+            <li>Diaper changes, hand-washing, and bathroom</li>
+          </ul>
+
+          <h2>General Principles</h2>
+
+          <p>
+            Each child and each group of children is different so there is no
+            one “right” schedule
+          </p>
+          <p>
+            <strong>Our carefully planned schedules will:</strong>
+          </p>
+          <ul>
+            <li>
+              Be predictable - routines provide security and comfort for younger
+              children as they grow out of infancy
+            </li>
+            <li>Be flexible - not rigid</li>
+            <li>
+              Include a variety of activities in some form every day  Variety
+              of toys/activities that focus on development of small and large
+              muscles
+              <ul>
+                <li>
+                  Art, books, music and singing, simple problem solving, cause
+                  and effect, and social experiences
+                </li>
+                <li>
+                  Opportunities for visual, auditory, and sensory stimulation
+                </li>
+              </ul>
+            </li>
+            <li>
+              Have a balance between activities that are:
+              <ul>
+                <li>Active vs. calm</li>
+                <li>Individual vs. group</li>
+                <li>Child-initiated vs. teacher-directed</li>
+                <li>Indoor vs. outdoor</li>
+              </ul>
+            </li>
+          </ul>
         </section>
       </article>
     </main>

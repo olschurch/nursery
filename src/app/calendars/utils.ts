@@ -11,7 +11,7 @@ export function parsePromise(str: string): Promise<string[][]> {
   });
 }
 
-export function filterOutPreviousEvents(
+export function filterOutPreviousEntries(
   data: Record<string, string | number>[],
 ) {
   const now = dayjs();

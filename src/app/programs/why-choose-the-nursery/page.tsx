@@ -1,14 +1,15 @@
 import { Hero } from '@/components/Hero/Hero';
-import styles from './why.module.css';
+
 import { Shadows_Into_Light_Two } from 'next/font/google';
-import clsx from 'clsx';
+import styles from '../programs.module.css';
+import Link from 'next/link';
 
 const font = Shadows_Into_Light_Two({ subsets: ['latin'], weight: '400' });
 export default function WhyChoose() {
   return (
     <>
       <Hero
-        src="/room_4.jpg"
+        src="/kids-2.jpeg"
         alt="A room inside the nursery"
         objectPosition="center"
         text="Why Choose Us?"
@@ -16,7 +17,7 @@ export default function WhyChoose() {
       <main className="p-4">
         <article className={styles.article}>
           <section>
-            <h2 className={font.className}>Our Features</h2>
+            <h2>Our Features</h2>
             <h3>Convenience</h3>
             <ul>
               <li>
@@ -55,14 +56,23 @@ export default function WhyChoose() {
             </ul>
 
             <h3>Quality Care</h3>
-            <p>
-              We follow ITERS standards and NAEYC guidelines for high-quality
-              early childhood education.
-            </p>
+            <ul>
+              <li>
+                We follow{' '}
+                <Link href="https://ers.fpg.unc.edu/infanttoddler-environment-rating-scale%C2%AE-revised-iters-r%E2%84%A2.html">
+                  ITERS standards
+                </Link>{' '}
+                and{' '}
+                <Link href="https://www.naeyc.org/our-work/families/10-naeyc-program-standards">
+                  NAEYC guidelines
+                </Link>{' '}
+                for high-quality early childhood education.
+              </li>
+            </ul>
           </section>
 
           <section>
-            <h2 className={font.className}>Parent Partnership</h2>
+            <h2>Parent Partnership</h2>
             <p>
               We believe in family involvement and shared decision-making. Our
               partnership creates a caring community for families, caregivers,

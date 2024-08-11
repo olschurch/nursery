@@ -1,8 +1,18 @@
 import { JWT } from 'google-auth-library';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
-import type { CalendarRow } from '@/types';
-import { filterOutPreviousEvents, sortByDate } from '@/app/calendar/utils';
+import type { CalendarRow, MenuRow } from '@/types';
+import { filterOutPreviousEntries, sortByDate } from '@/app/calendars/utils';
 import { docs as googleDocs, docs_v1 } from '@googleapis/docs';
+
+// hold on to previous result if 429
+let cachedResult: {
+  events: Record<string, string | number>[] | null;
+  menu: Record<string, string | number>[] | null;
+} = {
+  events: null,
+  menu: null,
+};
+
 const DEFAULT_IMAGE_WIDTH = 500;
 
 const SCOPES = [
@@ -118,32 +128,42 @@ export async function getDocumentAsHtml(documentId: string) {
 
 export async function loadCalendarFromSheet(id: string) {
   const doc = new GoogleSpreadsheet(id, serviceAccountAuth);
-  await doc.loadInfo();
 
-  const sheet = doc.sheetsByIndex[0];
-  const rows = await sheet.getRows<CalendarRow>();
+  try {
+    await doc.loadInfo();
 
-  const objArr = rows.map((row, index) => ({
-    Date: row.get('Date'),
-    Time: row.get('Time'),
-    Title: row.get('Title'),
-    Description: row.get('Description'),
-    Link: row.get('Link'),
-    LinkText: row.get('LinkText'),
-  }));
+    const events = doc.sheetsByTitle['Events'];
+    const menu = doc.sheetsByTitle['Menu'];
 
-  // TODO: Move to object
-  // const objArr = rows.map((row, index) => ({
-  //   date: {
-  //     date: row.get('Date'),
-  //     time: row.get('Time'),
-  //   },
-  //   Title: {
-  //     content: row.get('Event'),
-  //   },
-  // }));
+    const eventsRows = await events.getRows<CalendarRow>();
+    const menuRows = await menu.getRows<MenuRow>();
 
-  return filterOutPreviousEvents(sortByDate(objArr));
+    const eventsArr = eventsRows.map((row, index) => ({
+      Date: row.get('Date'),
+      Time: row.get('Time'),
+      Title: row.get('Title'),
+      Description: row.get('Description'),
+      Link: row.get('Link'),
+      LinkText: row.get('LinkText'),
+    }));
+
+    const menuArr = menuRows.map((row, index) => ({
+      Date: row.get('Date'),
+      AM: row.get('AM'),
+      PM: row.get('PM'),
+    }));
+
+    cachedResult = {
+      events: filterOutPreviousEntries(sortByDate(eventsArr)),
+      menu: filterOutPreviousEntries(sortByDate(menuArr)),
+    };
+
+    return cachedResult;
+  } catch (err) {
+    if (cachedResult?.events && cachedResult?.menu) {
+      return cachedResult;
+    }
+  }
 }
 
 export { serviceAccountAuth, SCOPES };

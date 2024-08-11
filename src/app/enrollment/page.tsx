@@ -33,13 +33,11 @@ Return check fee is $45.
 Tuition Fees are adjusted annually on July 1st.
 */
 
-const font = Shadows_Into_Light_Two({ subsets: ['latin'], weight: '400' });
-
 export default function Enrollment() {
   return (
     <main className={styles.enrollment}>
-      <article className="max-w-xl mx-auto my-8">
-        <h1 className={clsx('font-bold', font.className, 'text-3xl')}>
+      <article>
+        <h1 className={clsx('font-bold', 'text-3xl', 'text-primary')}>
           Enrollment Process
         </h1>
         <p>

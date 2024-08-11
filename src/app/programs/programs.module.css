@@ -1,16 +1,41 @@
 .article {
   @apply my-8 px-4;
+  @apply max-w-xl mx-auto;
   section {
     @apply max-w-sm md:max-w-xl mx-auto;
   }
+  h1 {
+    @apply text-primary font-bold text-3xl leading-8;
+    @apply mt-16;
+  }
+
   h2 {
-    @apply text-primary font-bold text-3xl;
-    @apply mt-4;
+    @apply font-bold text-xl text-primary;
+    @apply mt-8;
   }
   h3 {
-    @apply font-bold;
+    @apply font-bold text-foreground text-lg leading-4;
+    @apply mt-4;
   }
   p {
-    @apply my-4 text-lg;
+    @apply my-2 text-lg;
+    &:first-child {
+      &::first-line {
+        @apply font-bold;
+      }
+    }
+  }
+  a {
+    @apply underline;
+  }
+  ul {
+    @apply font-bold text-primary text-lg;
+    span {
+      @apply mt-4 block;
+    }
+    li {
+      @apply font-normal text-foreground;
+      @apply list-disc ml-4 my-1;
+    }
   }
 }

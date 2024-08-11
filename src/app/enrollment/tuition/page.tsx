@@ -6,20 +6,13 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import styles from './tuition.module.css';
-import { Hero } from '@/components/Hero/Hero';
-import clsx from 'clsx';
-import { Shadows_Into_Light_Two } from 'next/font/google';
-
-const font = Shadows_Into_Light_Two({ subsets: ['latin'], weight: '400' });
+import styles from '../page.module.css';
 
 export default function Tuition() {
   return (
-    <main>
-      <article className="max-w-xl mx-auto my-16 px-4">
-        <h1 className={clsx('font-bold', font.className, 'text-3xl')}>
-          2024 — 2025 Tuition Schedule
-        </h1>
+    <main className={styles.enrollment}>
+      <article>
+        <h1>2024 — 2025 Tuition Schedule</h1>
         <p>Tuition fee is weekly and is for five full time days.</p>
         <Table className="my-4 text-base">
           <TableHeader>

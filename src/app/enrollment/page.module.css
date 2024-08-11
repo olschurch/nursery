@@ -1,12 +1,16 @@
 .enrollment {
   @apply my-12;
   @apply max-w-2xl mx-auto;
-}
 
-.enrollment p {
-  @apply my-4;
-}
+  article {
+    @apply max-w-xl mx-auto my-8 px-4;
+  }
 
-.enrollment h2 {
-  @apply text-xl;
+  h1,
+  h2 {
+    @apply font-bold text-3xl text-primary;
+  }
+  p {
+    @apply my-4;
+  }
 }
