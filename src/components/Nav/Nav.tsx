@@ -63,7 +63,7 @@ export function Nav({ className }: { className: string }) {
             <HamburgerMenuIcon className="mt-1 w-6 h-6" />
           </DrawerTrigger>
           <DrawerContent className={styles['mobile--drawer']}>
-            <p className="font-bold">NOT DONE YET...</p>
+            <p className="font-bold text-xl mt-8 text-primary">The Nursery</p>
             <ul>
               <li>
                 <Link href="/programs/infants">Infant Program</Link>
@@ -83,7 +83,12 @@ export function Nav({ className }: { className: string }) {
                 <Link href="/enrollment/tuition">Tuition</Link>
               </li>
               <li>
-                <Link href="/enrollment">Apply Now</Link>
+                <Link
+                  href="/enrollment"
+                  className="!bg-primary !text-background w-auto px-2 py-1 rounded-lg"
+                >
+                  Apply Now
+                </Link>
               </li>
             </ul>
           </DrawerContent>

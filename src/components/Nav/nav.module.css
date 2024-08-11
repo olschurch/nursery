@@ -29,15 +29,13 @@
 .mobile--drawer {
   @apply p-4;
   a {
-    @apply block my-2 font-bold text-primary;
+    @apply block my-2 font-bold text-foreground;
   }
 
   ul {
-    @apply pl-4;
   }
 
   li {
-    @apply list-disc;
   }
 }
 
