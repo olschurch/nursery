@@ -41,6 +41,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Todo
 
-- add generic page layout
 - add dropcap option
-- use google api for doc too
+- Enrollment form...-
+- calendar desktop
+- 6 - 8 original pictures
+- add email contact
