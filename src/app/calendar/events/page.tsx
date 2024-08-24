@@ -10,7 +10,7 @@ export default function Events() {
 
   const events = (data.events ?? []).map((e) => ({
     date: dayjs(e.Date).format('YYYY-MM-DD'),
-    title: e.Title,
+    title: `${e.Title}`,
   }));
 
   console.log({ events });

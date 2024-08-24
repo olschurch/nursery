@@ -2,7 +2,10 @@
 
 import { createContext, ReactNode, useContext } from 'react';
 
-export const CalendarDataContext = createContext<any>(null);
+export const CalendarDataContext = createContext<{
+  events: Record<string, string | number>[] | null;
+  menu: Record<string, string | number>[] | null;
+}>({ events: null, menu: null });
 
 export function useCalendarData() {
   return useContext(CalendarDataContext);
