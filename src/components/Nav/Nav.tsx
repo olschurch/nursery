@@ -18,6 +18,7 @@ import { useEffect, useState } from 'react';
 import { Button } from '../ui/button';
 import { usePathname } from 'next/navigation';
 import { Shadows_Into_Light_Two } from 'next/font/google';
+import { ENROLLMENT_FORM } from '@/config';
 
 const font = Shadows_Into_Light_Two({ subsets: ['latin'], weight: '400' });
 
@@ -131,7 +132,12 @@ export function Nav({ className }: { className: string }) {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/enrollment" legacyBehavior passHref>
+              <Link
+                href={ENROLLMENT_FORM}
+                legacyBehavior
+                passHref
+                target="_blank"
+              >
                 <NavigationMenuLink className="!text-background font-bold py-1.5 px-4 bg-primary rounded-full hover:bg-primary/20 hover:!text-foreground !ml-7">
                   Enroll
                 </NavigationMenuLink>
