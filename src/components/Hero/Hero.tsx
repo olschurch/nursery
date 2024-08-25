@@ -45,7 +45,13 @@ export function Hero({
               [styles.shadow]: Boolean(src),
             })}
           >
-            <h1 className={clsx(font.className, styles.text)}>{text}</h1>
+            <h1
+              className={clsx(font.className, styles.text, {
+                [styles['use-shadow']]: src,
+              })}
+            >
+              {text}
+            </h1>
           </div>
         )}
       </figure>

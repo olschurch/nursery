@@ -71,11 +71,7 @@ export function Nav({ className }: { className: string }) {
               <li>
                 <Link href="/programs/toddlers">Toddler Program</Link>
               </li>
-              <li>
-                <Link href="/programs/why-choose-the-nursery">
-                  Why Choose Us?
-                </Link>
-              </li>
+
               <li>
                 <Link href="/calendar">Calendars</Link>
               </li>
@@ -112,10 +108,7 @@ export function Nav({ className }: { className: string }) {
                   href="/programs/daily-schedule"
                   text="Daily Schedule"
                 />
-                <DropdownMenuLinkItem
-                  href="/programs/why-choose-the-nursery"
-                  text="Why Choose Us?"
-                />
+
                 <DropdownMenuLinkItem href="/news" text="News" />
               </Dropdown>
             </NavigationMenuItem>

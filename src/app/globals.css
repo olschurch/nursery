@@ -71,12 +71,13 @@
     --padding: 2rem;
     --background: 50 100% 96%;
     --background-lighter: 50 100% 98%;
-    --foreground: var(--hue) 50.67% 29.41%;
+    --foreground: var(--hue) 99.67% 29.41%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: var(--hue) 73.2% 53.3%;
+    /* adjusted 8/24/24 */
+    --primary: var(--hue) 99.67% 29.41%;
     --primary-foreground: var(--hue) 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;

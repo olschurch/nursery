@@ -24,7 +24,6 @@ export default async function News() {
 
   return (
     <>
-      <Hero text="Newsletter" />
       <main className={styles.main}>
         <div dangerouslySetInnerHTML={{ __html: data ?? '' }}></div>
       </main>

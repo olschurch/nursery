@@ -17,7 +17,6 @@
     @apply relative;
     width: 100%;
     height: 100%;
-    @apply bg-primary/90;
     clip-path: var(--clip);
     .overlay {
       @apply absolute top-0 left-0 right-0 bottom-0;
@@ -27,10 +26,14 @@
     }
     .text {
       @apply absolute top-0 left-0 right-0 bottom-0;
-      @apply text-background-lighter;
+      @apply text-primary;
       @apply mb-4 lg:ml-8;
       @apply flex items-end justify-start p-4;
       @apply text-xl md:text-2xl lg:text-3xl font-bold;
+      &.use-shadow {
+        @apply text-background-lighter;
+        text-shadow: 2px 2px 10px hsl(var(--foreground));
+      }
     }
     img {
       /* using: https://www.wavegenerator.app/ */
@@ -46,7 +49,4 @@
 .text {
   @apply font-bold;
   @apply text-5xl md:!text-7xl;
-  text-shadow: 1px 10px var(--text-background-ligher),
-    -1px -1px 10px var(--text-background-ligher);
-  text-shadow: 2px 2px 10px hsl(var(--foreground));
 }

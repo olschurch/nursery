@@ -4,8 +4,12 @@ import styles from '../programs.module.css';
 export default function Philosophy() {
   return (
     <main>
-      <Hero objectPosition="bottom left" text="Daily Schedule" />
-
+      <Hero
+        src="/kids-2.jpeg"
+        alt="A room inside the nursery"
+        objectPosition="center"
+        text="Daily Schedule"
+      />
       <article className={styles.article}>
         <section>
           <p>
