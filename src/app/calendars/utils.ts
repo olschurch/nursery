@@ -13,11 +13,20 @@ export function parsePromise(str: string): Promise<string[][]> {
 
 export function filterOutPreviousEntries(
   data: Record<string, string | number>[],
+  opts?: Partial<{
+    filterBeforeBeginningOfMonth: boolean;
+  }>,
 ) {
-  const now = dayjs();
+  const currentDay = dayjs();
+  const currentMonth = dayjs().startOf('month');
+  let x: dayjs.Dayjs = currentDay;
+
+  if (opts?.filterBeforeBeginningOfMonth) {
+    x = currentMonth;
+  }
 
   return data.filter((d) => {
-    if (dayjs(d.Date).isBefore(now)) {
+    if (dayjs(d.Date).isBefore(x)) {
       return false;
     }
     return true;

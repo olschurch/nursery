@@ -77,7 +77,7 @@ export function Nav({ className }: { className: string }) {
                 </Link>
               </li>
               <li>
-                <Link href="/calendars">Calendars</Link>
+                <Link href="/calendar">Calendars</Link>
               </li>
               <li>
                 <Link href="/enrollment/tuition">Tuition</Link>
@@ -131,7 +131,7 @@ export function Nav({ className }: { className: string }) {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/calendars" legacyBehavior passHref>
+              <Link href="/calendar" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   Calendars
                 </NavigationMenuLink>

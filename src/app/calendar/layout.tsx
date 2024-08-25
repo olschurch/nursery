@@ -14,7 +14,6 @@ export default async function CalendarLayout({
     result?.events;
   let menu: Record<string, string | number>[] | undefined | null = result?.menu;
 
-  console.log({ result });
   return (
     <CalendarDataProvider data={{ events, menu }}>
       <section className={styles.wrapper}>{children}</section>
