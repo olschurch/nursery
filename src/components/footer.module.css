@@ -16,10 +16,18 @@
   }
 }
 
-.tel {
+.tel,
+.email {
   @apply my-2;
 }
 
 .group {
   @apply my-2;
+  &.hours {
+    @apply mb-4;
+  }
+}
+
+.hr {
+  @apply pb-4;
 }

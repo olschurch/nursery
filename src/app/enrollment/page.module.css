@@ -13,4 +13,19 @@
   p {
     @apply my-4;
   }
+
+  ol {
+    @apply list-decimal;
+    li {
+      @apply my-4;
+    }
+  }
+}
+
+.section {
+  @apply text-base;
+  ul {
+    @apply list-disc;
+    @apply pl-5;
+  }
 }

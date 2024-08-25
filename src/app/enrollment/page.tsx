@@ -4,6 +4,7 @@ import styles from './page.module.css';
 import { Shadows_Into_Light_Two } from 'next/font/google';
 import clsx from 'clsx';
 import Link from 'next/link';
+import { ENROLLMENT_FORM } from '@/config';
 
 /*
 Enrollment & Tuition Schedule
@@ -40,26 +41,24 @@ export default function Enrollment() {
         <h1 className={clsx('font-bold', 'text-3xl', 'text-primary')}>
           Enrollment Process
         </h1>
-        <p>
-          The first step in obtaining enrollment is completing an application
-          form, which can be done online.
-        </p>
-        <p>
-          Additionally, please see our{' '}
-          <Link href="/tuition" className="underline">
-            current tuition schedule
-          </Link>
-          .
-        </p>
-        <div className="my-2">
-          <Button>Enroll Now</Button>
-        </div>
-        <p className="my-8">
-          <small className="italic leading-2 block">
+
+        <ol>
+          <li>
+            The first step in obtaining enrollment is{' '}
+            <Link href={ENROLLMENT_FORM} target="_blank" className="underline">
+              completing an application
+            </Link>
+            form, which can be done online. Additionally, please see our{' '}
+            <Link href="/tuition" className="underline">
+              current tuition schedule
+            </Link>
+            .
+          </li>
+          <li>
             Once we receive your application, we will reach out to you regarding
-            payment of the $250 nonrefundable application fee. TK
-          </small>
-        </p>
+            payment of the $250 nonrefundable application fee.
+          </li>
+        </ol>
       </article>
     </main>
   );

@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 :root {
-  --hue: 220;
   --clip: polygon(
     100% 0%,
     0% 0%,
@@ -64,10 +63,10 @@
 @layer base {
   :root {
     --padding: 2rem;
-    --background: 180 60% 99.5%;
-    --background-lighter: 180 100% 99.5%;
-    --foreground: var(--hue) 99.67% 35.41%;
-    --primary: var(--hue) 99.67% 29.41%;
+    --background: 54 100% 94%;
+    --background-lighter: 54 100% 96%;
+    --foreground: 212 82% 39%;
+    --primary: 212 82% 39%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;

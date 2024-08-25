@@ -16,10 +16,13 @@ export default function Home() {
       <section className={styles.section}>
         <p>
           The Nursery at Our Lady of Sorrows School is conveniently located at
-          in the lovely village of South Orange, New Jersey. The beautiful and
-          completely renovated convent building of Our Lady of Sorrows Church
-          houses this nursery which provides year round affordable and loving
-          child care for children 6 weeks to 3 years of age.
+          in the lovely village of South Orange, New Jersey.
+        </p>
+        <p>
+          The beautiful and completely renovated convent building of Our Lady of
+          Sorrows Church houses this nursery which provides year round
+          affordable and loving child care for children from six-weeks to
+          three-years of age.
         </p>
       </section>
     </main>

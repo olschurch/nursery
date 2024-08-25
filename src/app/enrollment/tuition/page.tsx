@@ -17,9 +17,9 @@ export default function Tuition() {
         <Table className="my-4 text-base">
           <TableHeader>
             <TableRow>
-              <TableHead>Group</TableHead>
-              <TableHead>Age</TableHead>
-              <TableHead>Tuition</TableHead>
+              <TableHead className="text-primary font-bold">Group</TableHead>
+              <TableHead className="text-primary font-bold">Age</TableHead>
+              <TableHead className="text-primary font-bold">Tuition</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -36,12 +36,15 @@ export default function Tuition() {
           </TableBody>
         </Table>
         <section className={styles.section}>
-          <p>
-            There is a one-time registration fee of $250 due with application.
-          </p>
-          <p>Late pick up fee is $1 per minute past closing time.</p>
-          <p>Late payment fee is $25. Return check fee is $45.</p>
-          <p>Tuition fees are adjusted annually on July 1st</p>.
+          <ul>
+            <li>
+              There is a one-time registration fee of $250 due with application.
+            </li>
+            <li>Late pick up fee is $1 per minute past closing time.</li>
+            <li>Late payment fee is $25.</li>
+            <li>Returned check fee is $45.</li>
+            <li>Tuition fees are adjusted annually on July 1st</li>
+          </ul>
         </section>
       </article>
     </main>
