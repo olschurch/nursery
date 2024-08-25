@@ -1,8 +1,8 @@
 import { JWT } from 'google-auth-library';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import type { CalendarRow, MenuRow } from '@/types';
-import { filterOutPreviousEntries, sortByDate } from '@/app/calendars/utils';
 import { docs as googleDocs, docs_v1 } from '@googleapis/docs';
+import { filterOutPreviousEntries, sortByDate } from './utils';
 
 // hold on to previous result if 429
 let cachedResult: {
@@ -147,17 +147,33 @@ export async function loadCalendarFromSheet(id: string) {
       LinkText: row.get('LinkText'),
     }));
 
-    const menuArr = menuRows.map((row, index) => ({
-      Date: row.get('Date'),
-      AM: row.get('AM'),
-      PM: row.get('PM'),
-    }));
+    const menuArr: { date: string; text: string }[] = menuRows.reduce(
+      (acc, row) => {
+        const date = row.get('Date');
+        const am = row.get('AM');
+        const pm = row.get('PM');
+
+        return acc.concat([
+          {
+            date: date,
+            text: `AM: ${am}`,
+          },
+          {
+            date: date,
+            text: `PM: ${pm}`,
+          },
+        ]);
+      },
+      [] as { date: string; text: string }[],
+    );
 
     cachedResult = {
       events: filterOutPreviousEntries(sortByDate(eventsArr), {
         filterBeforeBeginningOfMonth: true,
       }),
-      menu: filterOutPreviousEntries(sortByDate(menuArr)),
+      menu: filterOutPreviousEntries(sortByDate(menuArr), {
+        filterBeforeBeginningOfMonth: true,
+      }),
     };
 
     return cachedResult;

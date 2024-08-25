@@ -21,12 +21,6 @@ export default function Home() {
           houses this nursery which provides year round affordable and loving
           child care for children 6 weeks to 3 years of age.
         </p>
-        <p>
-          Our secure, password-protected, state-of-the-art parental webcam
-          service allows parents to observe their own children via the web
-          during the day or review the archived recordings at any other time.
-        </p>
-        <p>We also offer free commuter parking to parents.</p>
       </section>
     </main>
   );

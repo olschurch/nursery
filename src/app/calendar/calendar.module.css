@@ -1,3 +1,34 @@
 .wrapper {
   @apply px-8 max-w-4xl mx-auto;
+  h1 {
+    @apply font-bold text-xl;
+  }
+  :global(.fc-toolbar-title) {
+    @apply font-bold text-lg;
+  }
+}
+
+.event {
+  @apply text-xs;
+  @apply border-0;
+  @apply px-1;
+  @apply bg-primary/10;
+  :global(.fc-event-title) {
+    @apply !text-foreground;
+  }
+}
+
+.mobile-event {
+  @apply text-xs;
+  :global(.fc-list-event-time) {
+    opacity: 0;
+  }
+}
+
+.desktop {
+  @apply hidden landscape:block;
+}
+
+.mobile {
+  @apply block landscape:hidden;
 }

@@ -21,31 +21,30 @@ const FullCalendar = dynamic(() => import('@fullcalendar/react'), {
 export default function Events() {
   const data = useCalendarData();
 
-  const events = (data.events ?? []).map((e) => ({
-    date: dayjs(e.Date).format('YYYY-MM-DD'),
-    title: `${e.Title}`,
+  const menu = (data.menu ?? []).map((e) => ({
+    date: dayjs(e.date).format('YYYY-MM-DD'),
+    title: `${e.text}`,
   }));
 
   return (
     <>
-      <h1>Nursery Events</h1>
+      <h1>Snack Menu</h1>
       <div className={styles.desktop}>
         <FullCalendar
           plugins={[dayGridPlugin]}
           initialView="dayGridMonth"
           weekends={false}
+          events={menu}
           eventClassNames={styles.event}
-          events={events}
         />
       </div>
-
       <div className={styles.mobile}>
         <FullCalendar
           plugins={[listPlugin]}
           initialView="listWeek"
+          eventClassNames={styles['mobile-event']}
           weekends={false}
-          eventClassNames={styles.event}
-          events={events}
+          events={menu}
         />
       </div>
     </>

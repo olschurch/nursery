@@ -124,11 +124,10 @@ export function Nav({ className }: { className: string }) {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/calendar" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Calendars
-                </NavigationMenuLink>
-              </Link>
+              <Dropdown title="Calendars">
+                <DropdownMenuLinkItem href="/calendar/events" text="Events" />
+                <DropdownMenuLinkItem href="/calendar/menu" text="Snack Menu" />
+              </Dropdown>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
