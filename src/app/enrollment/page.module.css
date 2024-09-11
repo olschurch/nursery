@@ -8,7 +8,7 @@
 
   h1,
   h2 {
-    @apply font-bold text-3xl text-primary;
+    @apply font-bold text-xl lg:text-3xl text-primary;
   }
   p {
     @apply my-4;

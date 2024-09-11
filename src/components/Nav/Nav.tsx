@@ -80,7 +80,7 @@ export function Nav({ className }: { className: string }) {
                 <Link href="/calendar/menu">Daily Food Menu</Link>
               </li>
               <li>
-                <Link href="/enrollment/tuition">Tuition</Link>
+                <Link href="/enrollment">Tuition & Admissions</Link>
               </li>
               <li>
                 <Link
@@ -118,13 +118,11 @@ export function Nav({ className }: { className: string }) {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Dropdown title="Admissions">
-                <DropdownMenuLinkItem
-                  href="/enrollment/tuition"
-                  text="Tuition"
-                />
-                <DropdownMenuLinkItem href="/enrollment" text="Enrollment" />
-              </Dropdown>
+              <Link href="/enrollment" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Tuition & Admissions
+                </NavigationMenuLink>
+              </Link>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
