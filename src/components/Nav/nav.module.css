@@ -29,7 +29,7 @@
 .mobile--drawer {
   @apply p-4;
   a {
-    @apply block my-2 font-bold text-foreground;
+    @apply block my-2 font-normal text-foreground;
   }
 
   ul {

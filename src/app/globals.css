@@ -63,8 +63,8 @@
 @layer base {
   :root {
     --padding: 2rem;
-    --background: 54 100% 94%;
-    --background-lighter: 54 100% 96%;
+    --background: 54 100% 98%;
+    --background-lighter: 54 100% 99%;
     --foreground: 212 82% 39%;
     --primary: 212 82% 39%;
     --card: 0 0% 100%;

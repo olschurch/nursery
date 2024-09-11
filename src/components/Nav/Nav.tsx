@@ -65,7 +65,7 @@ export function Nav({ className }: { className: string }) {
           </DrawerTrigger>
           <DrawerContent className={styles['mobile--drawer']}>
             <p className="font-bold text-xl mt-8 text-primary">The Nursery</p>
-            <ul>
+            <ul className="font-normal">
               <li>
                 <Link href="/programs/infants">Infant Program</Link>
               </li>
@@ -74,7 +74,10 @@ export function Nav({ className }: { className: string }) {
               </li>
 
               <li>
-                <Link href="/calendar">Calendars</Link>
+                <Link href="/calendar/events">Event Calendar</Link>
+              </li>
+              <li>
+                <Link href="/calendar/menu">Daily Food Menu</Link>
               </li>
               <li>
                 <Link href="/enrollment/tuition">Tuition</Link>

@@ -168,12 +168,8 @@ export async function loadCalendarFromSheet(id: string) {
     );
 
     cachedResult = {
-      events: filterOutPreviousEntries(sortByDate(eventsArr), {
-        filterBeforeBeginningOfMonth: true,
-      }),
-      menu: filterOutPreviousEntries(sortByDate(menuArr), {
-        filterBeforeBeginningOfMonth: true,
-      }),
+      events: sortByDate(eventsArr),
+      menu: sortByDate(menuArr),
     };
 
     return cachedResult;
