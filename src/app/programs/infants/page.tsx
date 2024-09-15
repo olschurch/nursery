@@ -1,15 +1,17 @@
 import styles from '../programs.module.css';
 import { Hero } from '@/components/Hero/Hero';
+export const metadata = {
+  title: 'Infants | Nursery At OLS',
+};
 
 export default function Infants() {
   return (
     <>
       <Hero
-        src="/cribs.jpg"
+        src="/k-3.jpg"
         alt="A room inside the nursery"
         objectPosition="center center"
-        text="
-        Infants"
+        text="Infants"
       />
       <article className={styles.article}>
         <section>

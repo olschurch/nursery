@@ -1,8 +1,8 @@
 .image-wrapper {
   /* https://www.wavegenerator.app/ */
-  width: 100%;
   overflow: hidden;
   @apply h-[30vh];
+  @apply px-4 lg:px-8;
   &.large {
     @apply landscape:h-[70vh];
     figure {
@@ -17,17 +17,17 @@
     @apply relative;
     width: 100%;
     height: 100%;
-    clip-path: var(--clip);
+    /* clip-path: var(--clip); */
     .overlay {
-      @apply absolute top-0 left-0 right-0 bottom-0;
+      /* @apply absolute top-0 left-0 right-0 bottom-0;
       background: rgba(0, 0, 0, 0.2);
       clip-path: var(--clip);
-      object-fit: cover;
+      object-fit: cover; */
     }
     .text {
       @apply absolute top-0 left-0 right-0 bottom-0;
       @apply text-primary;
-      @apply mb-4 lg:ml-8;
+      @apply mb-2 lg:ml-2;
       @apply flex items-end justify-start p-4;
       @apply text-xl md:text-2xl lg:text-3xl font-bold;
       &.use-shadow {

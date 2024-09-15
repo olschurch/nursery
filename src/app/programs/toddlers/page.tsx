@@ -1,13 +1,17 @@
 import styles from '../programs.module.css';
 import { Hero } from '@/components/Hero/Hero';
 
+export const metadata = {
+  title: 'Toddlers | Nursery At OLS',
+};
+
 export default function Infants() {
   return (
     <>
       <Hero
-        src="/kids-3.jpeg"
+        src="/k-4.jpg"
         alt="A room inside the nursery"
-        objectPosition="bottom left"
+        objectPosition="50% 20%"
         text="Toddler Room"
       />
       <article className={styles.article}>

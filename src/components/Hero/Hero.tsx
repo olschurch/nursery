@@ -4,17 +4,20 @@ import clsx from 'clsx';
 import styles from './Hero.module.css';
 import { Shadows_Into_Light_Two } from 'next/font/google';
 
+//const font = Sacramento({ weight: ['400'], subsets: ['latin'] });
 const font = Shadows_Into_Light_Two({ subsets: ['latin'], weight: '400' });
 export function Hero({
   src,
   alt,
   text,
   objectPosition,
+  flip = false,
 }: Partial<{
   src: string;
   alt: string;
   text: string;
   objectPosition: string;
+  flip: boolean;
 }>) {
   return (
     <div
@@ -31,6 +34,7 @@ export function Hero({
             alt={alt}
             src={src}
             style={{
+              ...(flip && { transform: 'scaleX(-1)' }),
               ...(objectPosition && { objectPosition }),
             }}
           />

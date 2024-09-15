@@ -8,10 +8,11 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Hero
-        src="/kids-1.jpeg"
+        src="/k-2.jpg"
         alt="A room inside the nursery"
         text="Welcome to The Nursery"
-        objectPosition="center"
+        objectPosition="100% 50%"
+        flip
       />
       <section className={styles.section}>
         <p>

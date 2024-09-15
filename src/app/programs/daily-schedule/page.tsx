@@ -1,11 +1,15 @@
 import { Hero } from '@/components/Hero/Hero';
 import styles from '../programs.module.css';
 
+export const metadata = {
+  title: 'Daily Schedule | Nursery At OLS',
+};
+
 export default function Philosophy() {
   return (
     <main>
       <Hero
-        src="/kids-2.jpeg"
+        src="/k-6.jpg"
         alt="A room inside the nursery"
         objectPosition="center"
         text="Daily Schedule"

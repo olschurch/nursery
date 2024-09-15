@@ -15,7 +15,6 @@ import { LogoGroup } from '../LogoGroup/LogoGroup';
 import { Dropdown, DropdownMenuLinkItem } from '../Dropdown/Dropdown';
 import { HamburgerMenuIcon } from '@radix-ui/react-icons';
 import { useEffect, useState } from 'react';
-import { Button } from '../ui/button';
 import { usePathname } from 'next/navigation';
 import { Shadows_Into_Light_Two } from 'next/font/google';
 import { ENROLLMENT_FORM } from '@/config';
@@ -64,7 +63,9 @@ export function Nav({ className }: { className: string }) {
             <HamburgerMenuIcon className="mt-1 w-6 h-6" />
           </DrawerTrigger>
           <DrawerContent className={styles['mobile--drawer']}>
-            <p className="font-bold text-xl mt-8 text-primary">The Nursery</p>
+            <p className="font-bold text-xl mt-8 -mb-2 text-primary">
+              <Link href="/">The Nursery</Link>
+            </p>
             <ul className="font-normal">
               <li>
                 <Link href="/programs/infants">Infant Program</Link>

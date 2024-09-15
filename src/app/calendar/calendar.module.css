@@ -1,7 +1,7 @@
 .wrapper {
-  @apply px-8 max-w-4xl mx-auto;
+  @apply px-8 w-full mx-auto;
   h1 {
-    @apply font-bold text-xl;
+    @apply font-bold text-xl lg:text-3xl -mb-1;
   }
   :global(.fc-toolbar-title) {
     @apply font-bold text-lg;
@@ -27,6 +27,7 @@
 
 .desktop {
   @apply hidden landscape:block;
+  @apply w-full;
 }
 
 .mobile {
