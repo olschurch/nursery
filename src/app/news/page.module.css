@@ -12,7 +12,7 @@
     }
 
     :global(h2) {
-      @apply text-base lg:text-lg mt-4 mb-2 font-bold;
+      @apply text-lg lg:text-xl mt-4 mb-2 font-bold;
     }
 
     :global(h3) {
