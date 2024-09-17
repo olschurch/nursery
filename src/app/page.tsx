@@ -4,6 +4,12 @@ import styles from './index.module.css';
 import { Sacramento } from 'next/font/google';
 const font = Sacramento({ weight: ['400'], subsets: ['latin'] });
 
+export const metadata = {
+  title: 'The Nursery At Our Lady Of Sorrows',
+  description:
+    'The Nursery of Our Lady of Sorrows in South Orange, NJ, provides year round child care for children 6 weeks to 3 years of age - with secure, parental webcam.',
+};
+
 export default function Home() {
   return (
     <main className={styles.main}>

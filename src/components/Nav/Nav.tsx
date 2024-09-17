@@ -75,6 +75,10 @@ export function Nav({ className }: { className: string }) {
               </li>
 
               <li>
+                <Link href="/news">Newsletter</Link>
+              </li>
+
+              <li>
                 <Link href="/calendar/events">Event Calendar</Link>
               </li>
               <li>
@@ -113,8 +117,6 @@ export function Nav({ className }: { className: string }) {
                   href="/programs/daily-schedule"
                   text="Daily Schedule"
                 />
-
-                <DropdownMenuLinkItem href="/news" text="News" />
               </Dropdown>
             </NavigationMenuItem>
 
@@ -122,6 +124,14 @@ export function Nav({ className }: { className: string }) {
               <Link href="/enrollment" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   Tuition & Admissions
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <Link href="/news" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  News
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
