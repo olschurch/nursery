@@ -41,6 +41,7 @@ export async function getDocumentAsHtml(documentId: string) {
 
     const document = response.data;
     let html = '';
+    let listStack: { nestingLevel: number; type: 'BULLET' | 'NUMBERED' }[] = [];
 
     // Function to get image URL
     const getImageUrl = (inlineObjectId: string) => {
@@ -84,29 +85,67 @@ export async function getDocumentAsHtml(documentId: string) {
             element.inlineObjectElement.inlineObjectId!,
           );
           if (imageUrl) {
-            // Images are now added directly to paragraphHtml, not contentHtml
             paragraphHtml += `<img src="${imageUrl}" alt="Inline image" width="${DEFAULT_IMAGE_WIDTH}" loading="lazy"/>`;
           }
         }
       });
 
-      switch (namedStyleType) {
-        case 'TITLE':
-          paragraphHtml = `<h1>${contentHtml}</h1>`;
-          break;
-        case 'HEADING_1':
-          paragraphHtml = `<h1>${contentHtml}</h1>`;
-          break;
-        case 'HEADING_2':
-          paragraphHtml = `<h2>${contentHtml}</h2>`;
-          break;
-        case 'HEADING_3':
-          paragraphHtml = `<h3>${contentHtml}</h3>`;
-          break;
-        default:
-          if (contentHtml.trim()) {
-            paragraphHtml = `<p>${contentHtml}</p>`;
-          }
+      const bulletList = paragraph.bullet;
+      if (bulletList) {
+        const nestingLevel = bulletList.nestingLevel || 0;
+        const listType = bulletList.listId ? 'NUMBERED' : 'BULLET';
+
+        // Close any open lists of higher nesting level
+        while (
+          listStack.length > 0 &&
+          listStack[listStack.length - 1].nestingLevel >= nestingLevel
+        ) {
+          const closedList = listStack.pop();
+          paragraphHtml =
+            `</li></${closedList?.type === 'BULLET' ? 'ul' : 'ol'}>` +
+            paragraphHtml;
+        }
+
+        // Open a new list if necessary
+        if (
+          listStack.length === 0 ||
+          listStack[listStack.length - 1].nestingLevel < nestingLevel
+        ) {
+          listStack.push({ nestingLevel, type: listType });
+          paragraphHtml =
+            `<${listType === 'BULLET' ? 'ul' : 'ol'}>` + paragraphHtml;
+        }
+
+        // Add the list item
+        paragraphHtml += `<li>${contentHtml}`;
+      } else {
+        // Close all open lists
+        while (listStack.length > 0) {
+          const closedList = listStack.pop();
+          paragraphHtml =
+            `</li></${closedList?.type === 'BULLET' ? 'ul' : 'ol'}>` +
+            paragraphHtml;
+        }
+
+        // Process non-list paragraphs as before
+        switch (namedStyleType) {
+          case 'TITLE':
+            paragraphHtml = `<h1>${contentHtml}</h1>`;
+            break;
+          case 'HEADING_1':
+            paragraphHtml = `<h1>${contentHtml}</h1>`;
+            break;
+          case 'HEADING_2':
+            paragraphHtml = `<h2>${contentHtml}</h2>`;
+            break;
+          case 'HEADING_3':
+            paragraphHtml = `<h3>${contentHtml}</h3>`;
+            break;
+          default:
+            if (contentHtml.trim()) {
+              paragraphHtml = `<p>${contentHtml}</p>`;
+            }
+        }
       }
 
       return paragraphHtml;

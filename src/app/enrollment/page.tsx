@@ -51,7 +51,7 @@ export default function Enrollment() {
   return (
     <>
       <Hero
-        src="/k-7.jpg"
+        src="/k-10.jpg"
         alt="A room inside the nursery"
         objectPosition="center center"
       />
