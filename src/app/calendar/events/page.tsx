@@ -33,7 +33,7 @@ export default function Events() {
         <FullCalendar
           plugins={[dayGridPlugin]}
           initialView="dayGridMonth"
-          weekends={false}
+          weekends
           eventClassNames={styles.event}
           events={events}
         />
@@ -42,8 +42,8 @@ export default function Events() {
       <div className={styles.mobile}>
         <FullCalendar
           plugins={[listPlugin]}
-          initialView="listWeek"
-          weekends={false}
+          initialView="listMonth"
+          weekends
           eventClassNames={styles.event}
           events={events}
         />
