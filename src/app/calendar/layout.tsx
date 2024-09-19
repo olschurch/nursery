@@ -3,6 +3,11 @@ import { ReactNode } from 'react';
 import styles from './calendar.module.css';
 import { loadCalendarFromSheet } from '@/lib/google';
 import { CalendarDataProvider } from './CalendarProvider';
+
+export const metadata = {
+  title: 'Calendar | Nursery At OLS',
+};
+
 export default async function CalendarLayout({
   children,
 }: {
