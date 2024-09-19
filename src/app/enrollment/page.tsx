@@ -71,8 +71,10 @@ export default function Enrollment() {
           <h3 className="font-bold text-lg lg:text-xl">
             2024 — 2025 Tuition Schedule
           </h3>
-          <p>Tuition fee is weekly and is for five full time days.</p>
-          <Table className="my-4 text-base">
+          <p className="text-sm lg:text-base">
+            Tuition fee is weekly and is for five full time days.
+          </p>
+          <Table className="my-4 text-sm lg:text-base">
             <TableHeader>
               <TableRow>
                 <TableHead className="text-primary font-bold">Group</TableHead>
@@ -111,7 +113,7 @@ export default function Enrollment() {
           <h3 className="font-bold mt-8 text-lg lg:text-xl">
             Enrollment Steps
           </h3>
-          <ol className="pl-5">
+          <ol className="pl-5 text-sm lg:text-base">
             <li>
               The first step in obtaining enrollment is{' '}
               <Link

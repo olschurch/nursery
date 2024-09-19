@@ -23,7 +23,7 @@
 }
 
 .section {
-  @apply text-base;
+  @apply text-sm lg:text-base;
   ul {
     @apply list-disc;
     @apply pl-5;

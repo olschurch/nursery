@@ -18,10 +18,6 @@ const FullCalendar = dynamic(() => import('@fullcalendar/react'), {
   },
 });
 
-export const metadata = {
-  title: 'Snack Menu | Nursery At OLS',
-};
-
 export default function Events() {
   const data = useCalendarData();
 

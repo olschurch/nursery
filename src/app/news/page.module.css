@@ -4,7 +4,7 @@
     @apply w-full mx-auto max-w-xl;
     @apply rounded-lg;
     @apply mt-8 mb-16;
-    @apply p-8;
+    @apply lg:p-8;
 
     :global(h1) {
       @apply text-xl lg:text-2xl text-primary font-bold leading-8;
@@ -20,7 +20,7 @@
     }
 
     :global(p) {
-      @apply text-lg my-2;
+      @apply text-base lg:text-lg my-2;
     }
 
     :global(img) {

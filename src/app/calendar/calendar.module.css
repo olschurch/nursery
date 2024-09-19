@@ -1,10 +1,22 @@
 .wrapper {
   @apply px-8 w-full mx-auto;
   h1 {
-    @apply font-bold text-xl lg:text-3xl -mb-1;
+    @apply font-bold text-base md:text-xl lg:text-3xl -mb-1;
+  }
+  :global(h2) {
+    @apply !text-sm md:!text-base lg:!text-lg;
+    @apply !leading-4;
   }
   :global(.fc-toolbar-title) {
     @apply font-bold text-lg;
+  }
+  :global(.fc-button) {
+    @apply !text-sm md:!text-base lg:!text-lg;
+    @apply !leading-4;
+  }
+
+  :global(.fc-today-button) {
+    @apply hidden;
   }
 }
 
@@ -32,4 +44,13 @@
 
 .mobile {
   @apply block landscape:hidden;
+  @apply min-h-[70vh];
+  :global(.fc) {
+    height: 100%;
+    flex-shrink: 0;
+    @apply min-h-[70vh];
+  }
+  :global(th) {
+    @apply text-sm md:!text-base lg:!text-lg;
+  }
 }
