@@ -7,6 +7,7 @@
   @apply py-4;
   @apply bg-background z-20;
   @apply h-16 md:h-28 lg:h-20;
+  @apply max-w-7xl mx-auto;
 }
 
 .desktop {

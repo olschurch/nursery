@@ -3,6 +3,7 @@
   overflow: hidden;
   @apply h-[50vh];
   @apply px-4 lg:px-8;
+  @apply max-w-7xl mx-auto;
   &.large {
     @apply landscape:h-[70vh];
     figure {
